@@ -11,45 +11,38 @@ import 'package:pocket_tomyo/generated/locales.g.dart';
 import '../../home/views/home_view.dart';
 
 class InitialView extends GetView<InitialController> {
-  const InitialView({Key? key}) : super(key: key);
-
-  // int _selectedIndex = 0;
-
-  @override
-  void initState() {
-    //  init home pages depending on create
-    HomeBinding().dependencies();
-    ProfileBinding().dependencies();
-  }
-
+  InitialView({Key? key}) : super(key: key);
   final _screens = const [
     HomeView(),
     Center(child: Text('2nd screen')),
     ProfileView(),
   ];
+  final _appBars = [
+    AppBar(
+      title: Text('something is here'),
+    ),
+    null,
+    null
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return
-        //  GetBuilder<InitialController>(
-        //   builder: (controller) =>
-        Scaffold(
-      appBar: AppBar(
-        title: Text(LocaleKeys.settings.tr),
-        centerTitle: true,
-      ),
-      body: _screens[controller.getselectedIndex],
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: controller.getselectedIndex,
-        onDestinationSelected: (value) {
-          controller.changeIndex(value);
-        },
-        destinations: TabType.values
-            .map((e) => NavigationDestination(
-                  icon: e.icon,
-                  label: e.title,
-                ))
-            .toList(),
+    return GetBuilder<InitialController>(
+      builder: (con) => Scaffold(
+        appBar: _appBars[con.getselectedIndex],
+        body: _screens[con.getselectedIndex],
+        bottomNavigationBar: NavigationBar(
+          selectedIndex: con.getselectedIndex,
+          onDestinationSelected: (value) {
+            con.changeIndex(value);
+          },
+          destinations: TabType.values
+              .map((e) => NavigationDestination(
+                    icon: e.icon,
+                    label: e.title,
+                  ))
+              .toList(),
+        ),
       ),
     );
     // );

@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
 
+import '../../home/bindings/home_binding.dart';
+import '../../profile/bindings/profile_binding.dart';
+
 class InitialController extends GetxController {
   int _selectedIndex = 0;
   void changeIndex(int index) {
@@ -10,6 +13,8 @@ class InitialController extends GetxController {
   get getselectedIndex => _selectedIndex;
   @override
   void onInit() {
+    HomeBinding().dependencies();
+    ProfileBinding().dependencies();
     super.onInit();
   }
 

@@ -22,7 +22,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.INITIAL,
-      page: () => const InitialView(),
+      page: () => InitialView(),
       binding: InitialBinding(),
     ),
     GetPage(
