@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = pocket_tomyo
+PRODUCT_NAME = Tiny;
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = pockettomyo.dokindd.pocketTomyo
+PRODUCT_BUNDLE_IDENTIFIER = tomujindigital.Tiny;
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2022 pocket_tomyo.dokindd. All rights reserved.

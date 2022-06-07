@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pocket_tomyo.dokindd.pocket_tomyo">
    <application
-        android:label="pocket_tomyo"
+        android:label="Tiny"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
