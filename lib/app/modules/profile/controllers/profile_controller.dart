@@ -1,13 +1,9 @@
 import 'package:get/get.dart';
 
-class InitialController extends GetxController {
-  int _selectedIndex = 0;
-  void changeIndex(int index) {
-    _selectedIndex = index;
-    update();
-  }
+class ProfileController extends GetxController {
+  //TODO: Implement ProfileController
 
-  get getselectedIndex => _selectedIndex;
+  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -22,4 +18,6 @@ class InitialController extends GetxController {
   void onClose() {
     super.onClose();
   }
+
+  void increment() => count.value++;
 }
