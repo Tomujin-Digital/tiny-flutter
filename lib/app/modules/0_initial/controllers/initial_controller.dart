@@ -14,11 +14,26 @@ class InitialController extends MainController {
   late NotifcationView notifcationView;
   late LeaderboardView leaderboardView;
   late ProfileView profileView;
+  @override
+  void onInit() {
+    homeView = HomeView();
+    programsView = ProgramsView();
+    notifcationView = NotifcationView();
+    leaderboardView = LeaderboardView();
+    profileView = ProfileView();
+    super.onInit();
+  }
+
   int _selectedIndex = 0;
-  Widget changeIndex(int index) {
+  get getselectedIndex => _selectedIndex;
+
+  void changeIndex(int index) {
     _selectedIndex = index;
     update();
-    switch (index) {
+  }
+
+  Widget get getSelectedPage {
+    switch (_selectedIndex) {
       case 0:
         return homeView;
       case 1:
@@ -28,21 +43,9 @@ class InitialController extends MainController {
       case 3:
         return leaderboardView;
       case 4:
-      default:
         return profileView;
+      default:
+        return homeView;
     }
-  }
-
-  get getselectedIndex => _selectedIndex;
-
-  /// Initialize all main screen's views [View]
-  @override
-  void onInit() {
-    homeView = const HomeView();
-    programsView = ProgramsView();
-    notifcationView = NotifcationView();
-    leaderboardView = LeaderboardView();
-    profileView = ProfileView();
-    super.onInit();
   }
 }

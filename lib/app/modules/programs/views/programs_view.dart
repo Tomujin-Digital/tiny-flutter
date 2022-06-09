@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:pocket_tomyo/library/main_view.dart';
+import 'package:pocket_tomyo/widgets/avatar_card.dart';
 
 import '../controllers/programs_controller.dart';
 
@@ -10,16 +11,29 @@ class ProgramsView extends MainView {
   final programsController = Get.put(ProgramsController());
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('ProgramsView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'ProgramsView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+    return SafeArea(
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: AvatarCard(
+              height: 100,
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                return const Card(
+                  child: ListTile(
+                    title: Text(
+                      'Programs',
+                    ),
+                  ),
+                );
+              },
+              childCount: 3,
+            ),
+          ),
+        ],
       ),
     );
   }

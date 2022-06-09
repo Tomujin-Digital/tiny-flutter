@@ -7,7 +7,7 @@ import 'app/routes/app_pages.dart';
 import 'app/utils/dependency.dart';
 import 'generated/locales.g.dart';
 
-void main() {
+void main() async {
   runApp(
     GetMaterialApp(
       initialBinding: DependencyCreator(),

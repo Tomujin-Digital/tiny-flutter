@@ -14,7 +14,10 @@ class InitialView extends GetView<InitialController> {
   Widget build(BuildContext context) {
     return GetBuilder<InitialController>(
       builder: (con) => Scaffold(
-        body: buildBody(con.getselectedIndex),
+        /// Сонгогдсон хуудас харагдах [TabBar]
+        body: con.getSelectedPage,
+
+        /// [NavigationBar] хэсгийг хэрэгжүүлэлт
         bottomNavigationBar: NavigationBar(
           labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
           backgroundColor: Colors.white,
@@ -36,10 +39,5 @@ class InitialView extends GetView<InitialController> {
         ),
       ),
     );
-    // );
-  }
-
-  Widget buildBody(int index) {
-    return controller.changeIndex(index);
   }
 }
