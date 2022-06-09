@@ -3,7 +3,6 @@ class MyModel {
   String name;
 
   MyModel({required this.id, required this.name});
-
   factory MyModel.fromJson(Map<String, dynamic> json) {
     return MyModel(
       id: json['id'],

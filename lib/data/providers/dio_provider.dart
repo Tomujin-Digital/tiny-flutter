@@ -7,6 +7,7 @@ const baseUrl = 'http://gerador-nomes.herokuapp.com/nomes/10';
 
 class MyApiClient {
   final Dio httpClient;
+
   MyApiClient({required this.httpClient});
 
   getAll() async {
@@ -18,8 +19,9 @@ class MyApiClient {
           return MyModel.fromJson(map);
         }).toList();
         return listMyModel;
-      } else
+      } else {
         print('erro -get');
+      }
     } catch (_) {}
   }
 }

@@ -1,11 +1,19 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
 
+import '../modules/0_initial/bindings/initial_binding.dart';
+import '../modules/0_initial/views/initial_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-import '../modules/initial/bindings/initial_binding.dart';
-import '../modules/initial/views/initial_view.dart';
+import '../modules/leaderboard/bindings/leaderboard_binding.dart';
+import '../modules/leaderboard/views/leaderboard_view.dart';
+import '../modules/notifcation/bindings/notifcation_binding.dart';
+import '../modules/notifcation/views/notifcation_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
+import '../modules/programs/bindings/programs_binding.dart';
+import '../modules/programs/views/programs_view.dart';
 
 part 'app_routes.dart';
 
@@ -22,13 +30,28 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.INITIAL,
-      page: () => InitialView(),
+      page: () => const InitialView(),
       binding: InitialBinding(),
     ),
     GetPage(
       name: _Paths.PROFILE,
-      page: () => const ProfileView(),
+      page: () => ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.LEADERBOARD,
+      page: () => LeaderboardView(),
+      binding: LeaderboardBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFCATION,
+      page: () => NotifcationView(),
+      binding: NotifcationBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROGRAMS,
+      page: () => ProgramsView(),
+      binding: ProgramsBinding(),
     ),
   ];
 }

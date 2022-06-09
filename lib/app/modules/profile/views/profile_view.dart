@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:pocket_tomyo/library/main_view.dart';
 
 import '../controllers/profile_controller.dart';
 
-class ProfileView extends GetView<ProfileController> {
-  const ProfileView({Key? key}) : super(key: key);
+class ProfileView extends MainView {
+  ProfileView({Key? key}) : super(key: key);
+  final profileController = Get.put(ProfileController());
+
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Text('Profile screen')],
+      children: const [Text('Profile screen')],
     );
   }
 }

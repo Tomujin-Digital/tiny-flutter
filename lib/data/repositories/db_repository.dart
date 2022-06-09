@@ -1,6 +1,7 @@
 class DbRepository {
-  // TODO implement DbRepository
+  ///
   // ... install dart_orm package
+  // ignore: prefer_typing_uninitialized_variables
   final api;
 
   DbRepository(this.api);

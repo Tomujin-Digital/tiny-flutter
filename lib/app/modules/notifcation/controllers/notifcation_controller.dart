@@ -1,3 +1,3 @@
 import 'package:pocket_tomyo/library/main_controller.dart';
 
-class HomeController extends MainController {}
+class NotifcationController extends MainController {}
