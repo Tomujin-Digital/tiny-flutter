@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:pocket_tomyo/app/config/app_constants.dart';
 import 'package:pocket_tomyo/library/main_view.dart';
 
+import '../../../../widgets/leader_board_item.dart';
 import '../controllers/leaderboard_controller.dart';
 
 class LeaderboardView extends MainView {
@@ -10,16 +12,21 @@ class LeaderboardView extends MainView {
   final leaderboardController = Get.put(LeaderboardController());
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('LeaderboardView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'LeaderboardView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: AppConstants.padding168,
+                child: LeaderBoardItem(index: index + 1),
+              );
+            },
+          ),
+        ],
       ),
     );
   }

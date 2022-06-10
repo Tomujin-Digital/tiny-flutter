@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 
 /// Байнга ашиглагдах [styling] утгууд
 class AppConstants {
   static const String appCopyright = '© 2022';
+  static const Color colorDarkBlue = Color(0xFF0F2851);
+  static const Color primaryColorPink = Color(0xFFEF518B);
+  static const Color colorGrey1 = Color(0xFF666666);
+  static const Color colorGrey2 = Color(0xFFf3f3f3);
 
-  /// [Widget] хооронд зай авахдаа дуудна.
   ///  [AppConstants.borderRadius] гэх мэт.
   /// spacing
   static const Widget hElementSpacing = SizedBox(width: 8.0);
@@ -14,10 +16,10 @@ class AppConstants {
   static const Widget vTitleSpacing = SizedBox(height: 16.0);
 
   /// padding & margin
-  static const EdgeInsets padding168 = EdgeInsets.symmetric(
-    horizontal: 16.0,
-    vertical: 8.0,
-  );
+  static const EdgeInsets padding168 =
+      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0);
+  static const EdgeInsets padding16 = EdgeInsets.all(16.0);
+  static const EdgeInsets padding40 = EdgeInsets.symmetric(horizontal: 4.0);
   static const double elevition = 16.0;
   static BorderRadius borderRadius = BorderRadius.circular(10.0);
 
