@@ -28,6 +28,7 @@ extension TabItem on TabType {
     }
     return Center(
       child: SvgPicture.asset(
+        height: 28.0,
         '$svgPath.svg',
       ),
     );
@@ -55,6 +56,7 @@ extension TabItem on TabType {
         break;
     }
     return SvgPicture.asset(
+      height: 28.0,
       '$svgPath.svg',
     );
   }

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:pocket_tomyo/app/modules/home/controllers/home_controller.dart';
 
 import 'package:pocket_tomyo/library/main_view.dart';
+import 'package:pocket_tomyo/widgets/post_widget.dart';
 
 class HomeView extends MainView {
   HomeView({Key? key}) : super(key: key);
@@ -14,10 +15,11 @@ class HomeView extends MainView {
         ? const Center(
             child: CircularProgressIndicator(),
           )
-        : Column(
-            children: const [
-              Text('Home screen'),
-            ],
+        : ListView.builder(
+            itemCount: 3,
+            itemBuilder: (context, index) {
+              return const PostWidget();
+            },
           );
   }
 }

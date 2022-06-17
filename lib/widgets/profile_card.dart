@@ -23,7 +23,8 @@ class ProfileCard extends StatelessWidget {
         borderRadius: AppConstants.borderRadius,
         color: Colors.white,
         elevation: 3,
-        child: Container(
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
           padding: AppConstants.padding16,
           height: height,
           child: Row(
