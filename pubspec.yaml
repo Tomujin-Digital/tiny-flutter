@@ -8,14 +8,14 @@ environment:
 dependencies: 
   cupertino_icons: ^1.0.2
   get: 4.6.5
-  dio: 4.0.6
-  shared_preferences: 2.0.15
+  dio: 4.0.6  
   flutter_svg: ^1.1.0
   google_fonts: ^3.0.1
   cached_network_image: 3.2.1
   sqflite: ^2.0.2+1
   path_provider: ^2.0.11
   carousel_slider: 4.1.1
+  flutter_secure_storage: 5.0.2
   flutter: 
     sdk: flutter
 
@@ -28,7 +28,7 @@ flutter:
   assets: 
     - assets/locales/
     - assets/svgs/
+    - assets/images/
     - assets/svgs/nav/
     - assets/svgs/profile/
   uses-material-design: true
-

@@ -5,6 +5,7 @@ import 'package:pocket_tomyo/app/modules/programs/bindings/programs_binding.dart
 
 import '../../home/bindings/home_binding.dart';
 import '../../profile/bindings/profile_binding.dart';
+import '../controllers/auth_controller.dart';
 import '../controllers/initial_controller.dart';
 
 class InitialBinding extends Bindings {

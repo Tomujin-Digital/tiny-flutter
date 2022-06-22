@@ -6,6 +6,7 @@ import 'package:pocket_tomyo/app/types/profile_tab_types.dart';
 import 'package:pocket_tomyo/library/main_view.dart';
 import 'package:pocket_tomyo/widgets/profile_card.dart';
 
+import '../../../../widgets/elf_wallet_widget.dart';
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends MainView {
@@ -183,12 +184,14 @@ class ProfileView extends MainView {
                 hasScrollBody: true,
                 child: TabBarView(
                     controller: profileController.tabController,
-                    children: const [
+                    children: [
                       Center(
                         child: Text('a'),
                       ),
-                      Center(
-                        child: Text('b'),
+                      Column(
+                        children: [
+                          ElfWalletWidget(),
+                        ],
                       ),
                       Center(
                         child: Text('c'),

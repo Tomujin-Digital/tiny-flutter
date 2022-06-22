@@ -12,6 +12,7 @@ class RecImageWidget extends StatelessWidget {
     required this.height,
     required this.imageUrl,
     this.fit,
+    this.margin,
     this.borderRadius,
     this.placeHolder,
     this.border,
@@ -22,6 +23,7 @@ class RecImageWidget extends StatelessWidget {
 
   /// The height of the image.
   final double height;
+  final EdgeInsets? margin;
 
   /// The URL of the image.
   final String imageUrl;
@@ -52,6 +54,7 @@ class RecImageWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        margin: margin,
         height: height,
         width: height,
         decoration: BoxDecoration(

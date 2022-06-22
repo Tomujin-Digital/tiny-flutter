@@ -11,6 +11,8 @@ abstract class Routes {
   static const LEADERBOARD = _Paths.LEADERBOARD;
   static const NOTIFCATION = _Paths.NOTIFCATION;
   static const PROGRAMS = _Paths.PROGRAMS;
+  static const LOGIN = _Paths.LOGIN;
+  static const START = _Paths.START;
 }
 
 abstract class _Paths {
@@ -21,4 +23,6 @@ abstract class _Paths {
   static const LEADERBOARD = '/leaderboard';
   static const NOTIFCATION = '/notifcation';
   static const PROGRAMS = '/programs';
+  static const LOGIN = '/login';
+  static const START = '/start';
 }

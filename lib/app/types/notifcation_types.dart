@@ -1,4 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pocket_tomyo/app/services/local_storage.dart';
 
 enum NotifcationTypes {
   following,
@@ -8,17 +12,61 @@ enum NotifcationTypes {
   completeLevel,
 }
 
-extension on NotifcationTypes {
+extension NotifcationType on NotifcationTypes {
   Widget get notifcationWidget {
     switch (this) {
       case NotifcationTypes.following:
-        return const Text('Following');
+        return ElevatedButton(
+            onPressed: () {
+              print('somethin');
+            },
+            child: const Text('Follow'));
+
       case NotifcationTypes.mentioned:
         return const Text('Mentioned');
       case NotifcationTypes.rank:
-        return const Text('Rank');
+        return ElevatedButton(
+          onPressed: () async {
+            Get.find<LocalStorageService>().save(LocalStorageKey.theme, 'dark');
+            final result = await Get.find<LocalStorageService>()
+                .read(LocalStorageKey.theme);
+            print(result ?? 'null');
+          },
+          child: Transform.rotate(
+            /// [Rotate] it with 45˚ (π/4)
+            angle: pi / 4,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Colors.purple,
+              ),
+              height: 20,
+              width: 20,
+              child: Transform.rotate(
+                /// [Rotate] it with -45˚ (π/4)
+                /// to make it look like a normal number[Not ratated]
+                angle: -pi / 4,
+                child: Center(
+                  child: Text(
+                    index.toString(),
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+
       case NotifcationTypes.inviteWord:
-        return const Text('Invite Word');
+        return ElevatedButton(
+            onPressed: () {
+              print('somethin');
+            },
+            child: const Text('Join Word'));
       case NotifcationTypes.completeLevel:
         return const Text('Complete Level');
       default:
