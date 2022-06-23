@@ -1,15 +1,16 @@
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
+import 'package:pocket_tomyo/app/config/custom_colors.dart';
 
 import 'touchable_scale.dart';
 
-class UPointButton extends StatelessWidget {
-  const UPointButton({
+class TinyButton extends StatelessWidget {
+  const TinyButton({
     Key? key,
     required this.onPressed,
     required this.child,
     this.contentColor,
-    this.color = Colors.black,
+    this.color = primary,
     this.width,
     this.padding = const EdgeInsets.fromLTRB(12.0, 6.0, 12.0, 6.0),
     this.height = 48.0,

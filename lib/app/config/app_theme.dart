@@ -3,7 +3,17 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static ThemeData lightTheme = ThemeData.light().copyWith(
     // useMaterial3: true,
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        textStyle: MaterialStateProperty.all(TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color: Colors.white,
+        )),
+      ),
+    ),
     inputDecorationTheme: InputDecorationTheme(
+      floatingLabelBehavior: FloatingLabelBehavior.never,
       filled: true,
       fillColor: Colors.white,
       border: OutlineInputBorder(
