@@ -6,7 +6,6 @@ class LoginController extends GetxController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -22,5 +21,13 @@ class LoginController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void checkForm() {
+    final isValid = formKey.currentState?.validate();
+    if (isValid ?? false) {
+      formKey.currentState?.save();
+      print('Form is valid');
+    } else {
+      print('Form is invalid');
+    }
+  }
 }

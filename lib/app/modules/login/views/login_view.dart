@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:pocket_tomyo/app/config/app_constants.dart';
 import 'package:pocket_tomyo/app/config/custom_colors.dart';
 import 'package:pocket_tomyo/library/main_view.dart';
 
@@ -48,14 +49,9 @@ class LoginView extends MainView {
         children: [
           const SizedBox(height: 24.0),
           TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Нэвтрэх нэр',
+            decoration: const InputDecoration(
+              labelText: 'Username or Email',
               filled: true,
-              fillColor: Colors.white,
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(12.0),
-              ),
             ),
             controller: _loginController.emailController,
             validator: (value) {
@@ -66,6 +62,20 @@ class LoginView extends MainView {
             },
           ),
           const SizedBox(height: 24.0),
+          TextFormField(
+            decoration: const InputDecoration(
+              labelText: 'Password',
+              filled: true,
+            ),
+            controller: _loginController.passwordController,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Нэвтрэх нэрээ оруулна уу';
+              }
+              return null;
+            },
+          ),
+          AppConstants.vElementSpacing
         ],
       ),
     );
