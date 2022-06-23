@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:pocket_tomyo/app/config/app_theme.dart';
+import 'package:pocket_tomyo/app/utils/desktop_scroll_behavior.dart';
 
 import 'app/routes/app_pages.dart';
 import 'app/services/local_storage.dart';
@@ -15,6 +16,7 @@ void main() async {
   await initServices();
   runApp(
     GetMaterialApp(
+      scrollBehavior: DesktopScrollBehavior(),
       initialBinding: DependencyCreator(),
       title: "Tiny",
       initialRoute: AppPages.INITIAL,

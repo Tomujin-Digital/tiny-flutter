@@ -16,10 +16,45 @@ class ProfileView extends MainView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: SafeArea(
+        child: NestedScrollView(
+          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+            SliverToBoxAdapter(
+              child: Container(
+                height: 168.0,
+                color: Colors.red,
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: TabBar(
+                controller: profileController.tabController,
+                // indicatorColor: AppConstants.,
+                tabs: [
+                  Tab(
+                    icon: Icon(Icons.pie_chart),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.pie_chart),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.pie_chart),
+                  ),
+                ],
+              ),
+            ),
+          ],
+          body: ListView(),
+        ),
+      ),
+    );
+  }
+
+  Widget oldBuild(BuildContext context) {
+    return Scaffold(
       // extendBodyBehindAppBar: true,
       body: SafeArea(
         child: RefreshIndicator(
-          onRefresh: () => profileController.getProfile(),
+          onRefresh: profileController.getProfile,
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
@@ -183,20 +218,28 @@ class ProfileView extends MainView {
               SliverFillRemaining(
                 hasScrollBody: true,
                 child: TabBarView(
-                    controller: profileController.tabController,
-                    children: [
-                      Center(
-                        child: Text('a'),
-                      ),
-                      Column(
+                  controller: profileController.tabController,
+                  children: [
+                    RefreshIndicator(
+                      onRefresh: () async {
+                        await Future.delayed(Duration(seconds: 5));
+                      },
+                      child: ListView(
                         children: [
-                          ElfWalletWidget(),
+                          Text('a'),
                         ],
                       ),
-                      Center(
-                        child: Text('c'),
-                      ),
-                    ]),
+                    ),
+                    Column(
+                      children: [
+                        ElfWalletWidget(),
+                      ],
+                    ),
+                    Center(
+                      child: Text('c'),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

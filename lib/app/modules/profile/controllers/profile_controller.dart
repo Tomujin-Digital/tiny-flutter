@@ -32,7 +32,7 @@ class ProfileController extends MainController
     super.onClose();
   }
 
-  getProfile() {
+  Future<void> getProfile() async {
     print('getProfile');
   }
 
