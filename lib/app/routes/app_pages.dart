@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 
 import '../modules/0_initial/bindings/initial_binding.dart';
 import '../modules/0_initial/views/initial_view.dart';
-
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/leaderboard/bindings/leaderboard_binding.dart';
@@ -57,9 +56,9 @@ class AppPages {
       binding: ProgramsBinding(),
     ),
     GetPage(
-      name: _Paths.LOGIN,
-      page: () => LoginView(),
-      binding: LoginBinding(),
-    ),
+        name: _Paths.LOGIN,
+        page: () => LoginView(),
+        binding: LoginBinding(),
+        children: []),
   ];
 }

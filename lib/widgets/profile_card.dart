@@ -24,6 +24,7 @@ class ProfileCard extends StatelessWidget {
         color: Colors.white,
         elevation: 3,
         child: AnimatedContainer(
+          curve: Curves.easeInOutCubic,
           duration: const Duration(milliseconds: 300),
           padding: AppConstants.padding16,
           height: height,
