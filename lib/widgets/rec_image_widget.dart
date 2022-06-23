@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 /// It also has a [onTap] callback that is called when the image is tapped.
 class RecImageWidget extends StatelessWidget {
   /// TODO: add ErrorWidget
-  ///
   const RecImageWidget({
     Key? key,
     required this.height,

@@ -11,8 +11,10 @@ enum AuthStatus {
 
 class AuthController extends GetxController {
   final status = AuthStatus.loggedOut.obs;
+
   @override
   void onInit() async {
+    super.onInit();
     final token =
         await Get.find<LocalStorageService>().read(LocalStorageKey.token);
     status.firstRebuild = false;
@@ -23,14 +25,6 @@ class AuthController extends GetxController {
       print('not logged in');
       status.value = AuthStatus.loggedOut;
     }
-    ever(status, (status) {
-      if (status == AuthStatus.loggedIn) {
-        Get.off(() => InitialView());
-      } else {
-        Get.off(() => LoginView());
-      }
-    });
-    super.onInit();
   }
 
   @override

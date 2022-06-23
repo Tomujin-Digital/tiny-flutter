@@ -30,4 +30,5 @@ void main() async {
 
 initServices() async {
   await Get.putAsync<LocalStorageService>(() async => LocalStorageService());
+  // await Hive.initFlutter();
 }

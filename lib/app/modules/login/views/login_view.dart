@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:pocket_tomyo/app/config/custom_colors.dart';
 import 'package:pocket_tomyo/library/main_view.dart';
 
 import '../controllers/login_controller.dart';
@@ -11,18 +12,30 @@ class LoginView extends MainView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          children: [
-            Image.asset(
-              'assets/images/logo_white.png',
-              color: Colors.white,
-              height: 80.0,
-            ),
-            Text('somethig is hsre'),
-            _buildLoginForm(),
-          ],
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              primary,
+              secondary,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Image.asset(
+                'assets/images/logo_white.png',
+                color: Colors.white,
+                height: 80.0,
+              ),
+              const Text('somethig is hsre'),
+              _buildLoginForm(),
+            ],
+          ),
         ),
       ),
     );
@@ -35,12 +48,15 @@ class LoginView extends MainView {
         children: [
           const SizedBox(height: 24.0),
           TextFormField(
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: 'Нэвтрэх нэр',
-              border: OutlineInputBorder(),
-              labelStyle: TextStyle(color: Colors.white),
+              filled: true,
+              fillColor: Colors.white,
+              border: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.circular(12.0),
+              ),
             ),
-            style: TextStyle(color: Colors.white),
             controller: _loginController.emailController,
             validator: (value) {
               if (value == null || value.isEmpty) {
