@@ -3,6 +3,14 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static ThemeData lightTheme = ThemeData.light().copyWith(
     // useMaterial3: true,
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: Colors.white,
+      border: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
       backgroundColor: MaterialStateProperty.all(Colors.pink),
