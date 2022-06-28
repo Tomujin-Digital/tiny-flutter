@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_tomyo/app/config/app_constants.dart';
 import 'package:pocket_tomyo/app/config/custom_colors.dart';
+import 'package:pocket_tomyo/app/routes/app_pages.dart';
 import 'package:pocket_tomyo/library/main_view.dart';
 import 'package:pocket_tomyo/widgets/buttons/filled_button.dart';
+import 'package:pocket_tomyo/widgets/inputs/animated_input.dart';
 
 import '../controllers/login_controller.dart';
+import 'register_view.dart';
 
 class LoginView extends MainView {
   LoginView({Key? key}) : super(key: key);
@@ -58,38 +61,46 @@ class LoginView extends MainView {
       child: Column(
         children: [
           const SizedBox(height: 24.0),
-          AnimatedSize(
-            duration: const Duration(milliseconds: 350),
-            curve: Curves.easeInOutCubic,
-            alignment: Alignment.topCenter,
-            child: TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Username or Email',
+          AnimatedInput(
+            controller: _loginController.emailController,
+            errorColor: Colors.black,
+            onValidator: (value) {
+              if (value!.isEmpty) {
+                return 'Please enter your email';
+              }
+              return null;
+            },
+            errorMessage: 'Нэвтрэх нэрээ оруулна уу',
+            label: 'Username or Email',
+          ),
+          AppConstants.vTitleSpacing,
+          Obx(
+            () => TextFormField(
+              obscureText: _loginController.isVisible.value,
+              decoration: InputDecoration(
+                errorStyle: const TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.black,
+                ),
+                suffixIcon: GestureDetector(
+                  onTap: () {
+                    _loginController.toggleVisibility();
+                  },
+                  child: _loginController.isVisible.value
+                      ? const Icon(Icons.remove_red_eye)
+                      : const Icon(Icons.visibility_off),
+                ),
+                labelText: 'Password',
                 filled: true,
-                errorStyle: TextStyle(color: Colors.black),
               ),
-              controller: _loginController.emailController,
+              controller: _loginController.passwordController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Нэвтрэх нэрээ оруулна уу';
+                  return 'Please enter password';
                 }
                 return null;
               },
             ),
-          ),
-          AppConstants.vTitleSpacing,
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: 'Password',
-              filled: true,
-            ),
-            controller: _loginController.passwordController,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Нэвтрэх нэрээ оруулна уу';
-              }
-              return null;
-            },
           ),
           AppConstants.vElementSpacing,
           AppConstants.vElementSpacing,
@@ -103,15 +114,40 @@ class LoginView extends MainView {
               children: const [
                 Text(
                   'Log in',
-                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+                  style: buttonStyle,
                 ),
               ],
             ),
           ),
           TextButton(
-              onPressed: () {},
-              child: Text('You forgot the password?',
-                  style: TextStyle(color: Colors.white))),
+            onPressed: () {},
+            child: const Text(
+              'You forgot the password?',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          const SizedBox(height: 32.0),
+          TinyButton(
+            color: Colors.white,
+            onPressed: () {
+              Get.to(() => RegisterView());
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text(
+                  'Don\'t have an account?',
+                ),
+                AppConstants.hTitleSpacing,
+                Text(
+                  'Sign up',
+                  style: TextStyle(
+                    color: Colors.blue,
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );

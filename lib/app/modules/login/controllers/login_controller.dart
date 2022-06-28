@@ -5,10 +5,16 @@ class LoginController extends GetxController {
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final isVisible = true.obs;
 
   @override
   void onInit() {
     super.onInit();
+  }
+
+  bool toggleVisibility() {
+    isVisible.value = !isVisible.value;
+    return isVisible.value;
   }
 
   @override

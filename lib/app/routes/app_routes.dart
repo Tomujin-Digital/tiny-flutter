@@ -11,6 +11,7 @@ abstract class Routes {
   static const LEADERBOARD = _Paths.LEADERBOARD;
   static const NOTIFCATION = _Paths.NOTIFCATION;
   static const PROGRAMS = _Paths.PROGRAMS;
+  static const REGISTER = _Paths.LOGIN + _Paths.REGISTER;
   static const LOGIN = _Paths.LOGIN;
   static const START = _Paths.START;
   static const POST_DETAIL = _Paths.POST_DETAIL;
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const LOGIN = '/login';
   static const START = '/start';
   static const POST_DETAIL = '/post-detail';
+  static const REGISTER = '/register';
 }

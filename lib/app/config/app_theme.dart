@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData.light().copyWith(
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      linearMinHeight: 16.0,
+      color: Colors.green,
+      refreshBackgroundColor: Colors.white,
+      linearTrackColor: Color(0xFFF2F2F2),
+    ),
     // useMaterial3: true,
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
