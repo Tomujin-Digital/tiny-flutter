@@ -12,6 +12,9 @@ enum AuthStatus {
 }
 
 class AuthController extends GetxController {
+  AuthController() {
+    print('this file is execued');
+  }
   final status = AuthStatus.loggedOut.obs;
 
   final storage = Get.find<LocalStorageService>();
@@ -25,7 +28,7 @@ class AuthController extends GetxController {
     print('AuthController: onInit');
     super.onInit();
     checkToken();
-    status.firstRebuild = false;
+    // status.firstRebuild = false;
   }
 
   checkToken() async {

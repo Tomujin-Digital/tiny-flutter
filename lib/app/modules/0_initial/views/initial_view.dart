@@ -13,9 +13,8 @@ import '../controllers/initial_controller.dart';
 ///  Үндсэн хуудас
 class InitialView extends MainView {
   InitialView({Key? key}) : super(key: key);
-  final authController = Get.find<AuthController>();
-
-  // Get.put<AuthController>(AuthController(), permanent: true);
+  // final authController = Get.find<AuthController>();
+  final authController = Get.put<AuthController>(AuthController());
   @override
   Widget build(BuildContext context) {
     return Obx(() => authController.status.value == AuthStatus.loggedIn

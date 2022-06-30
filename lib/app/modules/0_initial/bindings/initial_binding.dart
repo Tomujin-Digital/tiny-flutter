@@ -12,12 +12,11 @@ class InitialBinding extends Bindings {
   /// Binding all main screen's controllers [InitialController]
   @override
   void dependencies() {
-    Get.lazyPut<InitialController>(
-      () => InitialController(),
-    );
-    Get.lazyPut<AuthController>(
-      () => AuthController(),
-    );
+    Get.put<InitialController>(InitialController(), permanent: true);
+    // Get.lazyPut<AuthController>(
+    //   () => AuthController(),
+    //   // fenix: true,
+    // );
     HomeBinding().dependencies();
     ProgramsBinding().dependencies();
     NotifcationBinding().dependencies();

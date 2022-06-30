@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_tomyo/app/config/custom_colors.dart';
+import 'package:pocket_tomyo/app/services/auth_repository.dart';
+
+import '../../../../widgets/dialogs/custom_dialog.dart';
 
 class RegisterController extends GetxController {
   /// [PageController] for the [PageView]
   late PageController pageController;
+  final AuthRepository _authRepository = Get.find<AuthRepository>();
 
   /// The number of pages in the [PageView] on the [RegisterView].
   static const totalPages = 7;
@@ -15,6 +20,7 @@ class RegisterController extends GetxController {
   final isLast = false.obs;
   final registerFormKey = GlobalKey<FormState>();
   final userNameController = TextEditingController();
+
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
@@ -31,11 +37,13 @@ class RegisterController extends GetxController {
   }
 
   nextPage() async {
-    /// validate the form and move to the next page
     switch (currentPage.value) {
       case 1:
         checkController(userNameController);
         break;
+
+      /// if the user name is already taken, show an error message.
+
       case 2:
         checkController(birthdayController);
         break;
@@ -59,26 +67,31 @@ class RegisterController extends GetxController {
   checkController(TextEditingController controller,
       {bool isCheckTwo = false}) async {
     if (controller.text.isEmpty) {
-      print('Text is here');
-      print(controller.text);
-      print('controller is empty');
       registerFormKey.currentState!.validate();
     } else {
       /// async function to connect to the server and check if the user name is available
-      bool isCorreect = await checkCondition();
 
       /// checking condition of each case
-      if (isCorreect) {
-        if (currentPage.value < totalPages - 1 && !isCheckTwo) {
-          currentPage.value++;
-          pageController.nextPage(
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeInOutCubic,
-          );
-        } else {
-          checkIslastAndNextPage();
-        }
+
+      if (currentPage.value < totalPages - 1 && !isCheckTwo) {
+        currentPage.value++;
+        pageController.nextPage(
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeInOutCubic,
+        );
+      } else {
+        checkIslastAndNextPage();
       }
+    }
+  }
+
+  Future<num> checkUserName() async {
+    print(userNameController.text);
+    final res = await _authRepository.checkUserName(userNameController.text);
+    if (res.data['count'] == 0) {
+      return 0;
+    } else {
+      return 1;
     }
   }
 
@@ -113,10 +126,6 @@ class RegisterController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-  }
-
-  Future<bool> checkCondition() async {
-    return true;
   }
 
   @override

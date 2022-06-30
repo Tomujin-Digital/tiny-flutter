@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../../app/utils/de_bouncer.dart';
+
 class AnimatedInput extends StatelessWidget {
   const AnimatedInput({
     Key? key,
     this.label,
     this.errorColor,
     this.errorMessage,
+    this.hasDebouncer = false,
+    this.function,
     required this.onValidator,
     required this.controller,
   }) : super(key: key);
@@ -13,10 +17,13 @@ class AnimatedInput extends StatelessWidget {
   final Color? errorColor;
   final String? errorMessage;
   final TextEditingController controller;
+  final bool hasDebouncer;
   final Function(String? validatorValue) onValidator;
+  final Function(String? query)? function;
 
   @override
   Widget build(BuildContext context) {
+    final _debouncer = Debouncer(milliseconds: hasDebouncer ? 500 : 0);
     return AnimatedSize(
       duration: const Duration(milliseconds: 350),
       curve: Curves.easeInOutCubic,
@@ -31,6 +38,13 @@ class AnimatedInput extends StatelessWidget {
             fontSize: 16.0,
           ),
         ),
+        onChanged: (value) {
+          _debouncer.run(() {
+            if (function != null) {
+              function!(value);
+            }
+          });
+        },
         controller: controller,
         validator: (value) => onValidator(value),
       ),

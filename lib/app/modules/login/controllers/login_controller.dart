@@ -6,8 +6,9 @@ import '../../0_initial/controllers/auth_controller.dart';
 class LoginController extends GetxController {
   final isLoading = false.obs;
   // final authCtrl = Get.find<AuthController>();
-  final authController =
-      Get.put<AuthController>(AuthController(), permanent: true);
+  // final authController =
+  //     Get.put<AuthController>(AuthController(), permanent: true);
+  final authController = Get.find<AuthController>();
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -16,6 +17,13 @@ class LoginController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 
   bool toggleVisibility() {
@@ -33,7 +41,7 @@ class LoginController extends GetxController {
     super.onClose();
   }
 
-  void checkForm() async {
+  Future<void> checkForm() async {
     isLoading.value = true;
     final isValid = formKey.currentState?.validate();
     if (isValid ?? false) {
@@ -41,6 +49,7 @@ class LoginController extends GetxController {
         email: emailController.text,
         password: passwordController.text,
       );
+      isLoading.value = false;
     }
     isLoading.value = false;
   }

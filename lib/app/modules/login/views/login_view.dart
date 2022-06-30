@@ -108,18 +108,20 @@ class LoginView extends MainView {
           AppConstants.vElementSpacing,
           AppConstants.vElementSpacing,
           TinyButton(
-            onPressed: () {
-              _loginController.checkForm();
+            onPressed: () async {
+              await _loginController.checkForm();
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _loginController.isLoading.value == true
-                    ? const CupertinoActivityIndicator()
-                    : const Text(
-                        'Log in',
-                        style: buttonStyle,
-                      ),
+                Obx(
+                  () => _loginController.isLoading.value == true
+                      ? const CupertinoActivityIndicator(color: Colors.white)
+                      : const Text(
+                          'Log in',
+                          style: buttonStyle,
+                        ),
+                ),
               ],
             ),
           ),

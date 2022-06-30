@@ -28,7 +28,7 @@ extension NotifcationType on NotifcationTypes {
       case NotifcationTypes.rank:
         return ElevatedButton(
           onPressed: () async {
-            // await Get.find<AuthController>().logOut();
+            await Get.find<AuthController>().logOut();
           },
           child: Transform.rotate(
             /// [Rotate] it with 45˚ (π/4)
