@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:pocket_tomyo/app/config/app_constants.dart';
 import 'package:pocket_tomyo/app/config/custom_colors.dart';
+import 'package:pocket_tomyo/app/modules/0_initial/controllers/auth_controller.dart';
 import 'package:pocket_tomyo/app/routes/app_pages.dart';
 import 'package:pocket_tomyo/library/main_view.dart';
 import 'package:pocket_tomyo/widgets/buttons/filled_button.dart';
@@ -111,11 +113,13 @@ class LoginView extends MainView {
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  'Log in',
-                  style: buttonStyle,
-                ),
+              children: [
+                _loginController.isLoading.value == true
+                    ? const CupertinoActivityIndicator()
+                    : const Text(
+                        'Log in',
+                        style: buttonStyle,
+                      ),
               ],
             ),
           ),

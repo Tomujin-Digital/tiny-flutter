@@ -9,14 +9,13 @@ class LocalStorageService extends GetxService {
   );
 
   /// write value
-  void save(LocalStorageKey key, String? value) async {
+  write(LocalStorageKey key, String? value) async {
     await _storage.write(key: key.name, value: value);
     print('LocalStorageService: save $key: $value');
   }
 
-  void delete(LocalStorageKey key, String? value) async {
+  void delete(LocalStorageKey key) async {
     await _storage.delete(key: key.name);
-    print('LocalStorageService: save $key: $value');
   }
 
   Future<String?> read(LocalStorageKey key) async {

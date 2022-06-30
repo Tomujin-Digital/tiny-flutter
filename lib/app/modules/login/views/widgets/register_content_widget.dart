@@ -1,5 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
 
 class RegisterContentWidget extends StatelessWidget {
   const RegisterContentWidget(
@@ -14,8 +15,12 @@ class RegisterContentWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24.0),
       child: Column(
         children: [
-          SizedBox(height: 40),
-          CachedNetworkImage(imageUrl: imageUrl),
+          SizedBox(height: Get.height * 0.1),
+          Image(
+            image: AssetImage('assets/images/$imageUrl'),
+            fit: BoxFit.contain,
+            height: Get.height * 0.15,
+          ),
           Expanded(child: child),
         ],
       ),

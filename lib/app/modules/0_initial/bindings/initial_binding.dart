@@ -15,6 +15,9 @@ class InitialBinding extends Bindings {
     Get.lazyPut<InitialController>(
       () => InitialController(),
     );
+    Get.lazyPut<AuthController>(
+      () => AuthController(),
+    );
     HomeBinding().dependencies();
     ProgramsBinding().dependencies();
     NotifcationBinding().dependencies();

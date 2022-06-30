@@ -6,7 +6,7 @@ class RegisterController extends GetxController {
   late PageController pageController;
 
   /// The number of pages in the [PageView] on the [RegisterView].
-  static const totalPages = 5;
+  static const totalPages = 7;
 
   /// The current page in the [PageView] on the [RegisterView].
   final currentPage = 0.obs;
@@ -21,6 +21,7 @@ class RegisterController extends GetxController {
   final phoneController = TextEditingController();
   final birthdayController = TextEditingController();
   final otpController = TextEditingController();
+  final otpVerifyController = TextEditingController();
 
   String? validator(String? value) {
     if (value!.isEmpty) {
@@ -29,7 +30,7 @@ class RegisterController extends GetxController {
     return null;
   }
 
-  nextPage() {
+  nextPage() async {
     /// validate the form and move to the next page
     switch (currentPage.value) {
       case 1:
@@ -39,34 +40,65 @@ class RegisterController extends GetxController {
         checkController(birthdayController);
         break;
       case 3:
-        checkController(passwordController);
+        checkController(passwordController, isCheckTwo: true);
         checkController(confirmPasswordController);
         break;
       case 4:
         checkController(phoneController);
         break;
       case 5:
-        checkController(otpController);
+        print('case 5');
+        checkController(otpVerifyController);
         break;
+
       default:
-        pageController.nextPage(
-            duration: Duration(milliseconds: 300), curve: Curves.easeIn);
+        checkIslastAndNextPage();
     }
   }
 
-  checkController(TextEditingController controller) {
+  checkController(TextEditingController controller,
+      {bool isCheckTwo = false}) async {
     if (controller.text.isEmpty) {
+      print('Text is here');
+      print(controller.text);
+      print('controller is empty');
       registerFormKey.currentState!.validate();
     } else {
-      if (currentPage.value < totalPages - 1) {
-        currentPage.value++;
-        pageController.nextPage(
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeInOutCubic,
-        );
-      } else {
-        isLast.value = true;
+      /// async function to connect to the server and check if the user name is available
+      bool isCorreect = await checkCondition();
+
+      /// checking condition of each case
+      if (isCorreect) {
+        if (currentPage.value < totalPages - 1 && !isCheckTwo) {
+          currentPage.value++;
+          pageController.nextPage(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOutCubic,
+          );
+        } else {
+          checkIslastAndNextPage();
+        }
       }
+    }
+  }
+
+  checkIslastAndNextPage() {
+    print('someting ');
+    if (currentPage.value == totalPages) {
+      currentPage.value == totalPages
+          ? isLast.value = true
+          : isLast.value = false;
+      print('go to next section');
+
+      /// Login to the app
+
+    } else {
+      currentPage.value++;
+      print(currentPage.value);
+      pageController.nextPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOutCubic,
+      );
     }
   }
 
@@ -81,6 +113,10 @@ class RegisterController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+  }
+
+  Future<bool> checkCondition() async {
+    return true;
   }
 
   @override

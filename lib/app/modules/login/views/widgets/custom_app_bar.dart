@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../config/app_constants.dart';
-import '../register_view.dart';
+
+typedef IntCallback = void Function(int val);
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
@@ -63,7 +64,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                           callback.call(i);
                         },
                         child: LinearProgressIndicator(
-                          value: i < currentPage ? 1 : 0,
+                          value: i < (currentPage - 1) ? 1 : 0,
                         ),
                       ),
                     ),

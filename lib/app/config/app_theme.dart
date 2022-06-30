@@ -1,32 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:pocket_tomyo/app/config/custom_colors.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData.light().copyWith(
-    progressIndicatorTheme: ProgressIndicatorThemeData(
+    textTheme: ThemeData.light().textTheme
+      ..copyWith(
+        subtitle1: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+          color: secondary,
+        ),
+      )
+      ..apply(
+        fontFamily: GoogleFonts.poppins().fontFamily,
+      ),
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
       linearMinHeight: 16.0,
-      color: Colors.green,
+      color: Color(0xFF55C595),
       refreshBackgroundColor: Colors.white,
       linearTrackColor: Color(0xFFF2F2F2),
     ),
     // useMaterial3: true,
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-        textStyle: MaterialStateProperty.all(TextStyle(
+        textStyle: MaterialStateProperty.all(const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w500,
           color: Colors.white,
         )),
       ),
     ),
+
     inputDecorationTheme: InputDecorationTheme(
       floatingLabelBehavior: FloatingLabelBehavior.never,
       filled: true,
+      labelStyle: const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w700,
+        color: Colors.grey,
+      ),
       fillColor: Colors.white,
+      iconColor: Colors.grey,
       border: OutlineInputBorder(
         borderSide: BorderSide.none,
         borderRadius: BorderRadius.circular(12.0),
       ),
     ),
+
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
       backgroundColor: MaterialStateProperty.all(Colors.pink),

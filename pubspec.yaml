@@ -2,10 +2,10 @@ name: pocket_tomyo
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment:
+environment: 
   sdk: '>=2.17.1 <3.0.0'
 
-dependencies:
+dependencies: 
   cupertino_icons: ^1.0.2
   get: 4.6.5
   dio: 4.0.6
@@ -18,19 +18,21 @@ dependencies:
   flutter_secure_storage: 5.0.2
   figma_squircle: ^0.5.3
   hive: 2.2.2
-  flutter:
+  pinput: 2.2.11
+  flutter: 
     sdk: flutter
 
-dev_dependencies:
+dev_dependencies: 
   flutter_lints: 2.0.1
-  flutter_test:
+  flutter_test: 
     sdk: flutter
 
-flutter:
-  assets:
+flutter: 
+  assets: 
     - assets/locales/
     - assets/svgs/
     - assets/images/
     - assets/svgs/nav/
     - assets/svgs/profile/
   uses-material-design: true
+

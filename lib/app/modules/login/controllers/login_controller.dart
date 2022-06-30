@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../0_initial/controllers/auth_controller.dart';
+
 class LoginController extends GetxController {
+  final isLoading = false.obs;
+  // final authCtrl = Get.find<AuthController>();
+  final authController =
+      Get.put<AuthController>(AuthController(), permanent: true);
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -27,13 +33,15 @@ class LoginController extends GetxController {
     super.onClose();
   }
 
-  void checkForm() {
+  void checkForm() async {
+    isLoading.value = true;
     final isValid = formKey.currentState?.validate();
     if (isValid ?? false) {
-      formKey.currentState?.save();
-      print('Form is valid');
-    } else {
-      print('Form is invalid');
+      await authController.login(
+        email: emailController.text,
+        password: passwordController.text,
+      );
     }
+    isLoading.value = false;
   }
 }

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/config/app_constants.dart';
+
 import 'package:pocket_tomyo/app/config/custom_colors.dart';
 import 'package:pocket_tomyo/app/modules/login/views/widgets/custom_app_bar.dart';
 
 import 'package:pocket_tomyo/library/main_view.dart';
 import 'package:pocket_tomyo/widgets/buttons/filled_button.dart';
 
-import '../../../../widgets/inputs/animated_input.dart';
 import '../controllers/register_controller.dart';
+import 'widgets/register_intro.dart';
 import 'widgets/register_content_widget.dart';
 import 'widgets/inputs.dart';
-
-typedef void IntCallback(int val);
+import 'widgets/register_reward.dart';
+import 'widgets/verify_pin_put.dart';
 
 class RegisterView extends MainView {
   RegisterView({Key? key}) : super(key: key);
@@ -26,30 +26,80 @@ class RegisterView extends MainView {
 
     return Obx(
       () => Scaffold(
-        appBar: CustomAppBar(
-          currentPage: _registerController.currentPage.value,
-          totalPages: RegisterController.totalPages - 1,
-          callback: (val) {
-            _registerController.currentPage.value = val;
-            _registerController.pageController.jumpToPage(val + 1);
-          },
-          height: appBarHeight,
-          topPadding: top,
-          preferredSize: Size.fromHeight(appBarHeight + top),
-        ),
+        resizeToAvoidBottomInset: false,
+        appBar: _registerController.currentPage.value == 0 ||
+                _registerController.currentPage.value == 6 ||
+                _registerController.currentPage.value == 7
+            ? null
+            : CustomAppBar(
+                currentPage: _registerController.currentPage.value,
+                totalPages: 4,
+                callback: (val) {
+                  _registerController.currentPage.value = val;
+                  _registerController.pageController.jumpToPage(val + 1);
+                },
+                height: appBarHeight,
+                topPadding: top,
+                preferredSize: Size.fromHeight(appBarHeight + top),
+              ),
         body: Form(
           key: _registerController.registerFormKey,
           child: PageView(
             onPageChanged: (value) =>
                 _registerController.currentPage.value = value,
             controller: _registerController.pageController,
+            physics: const NeverScrollableScrollPhysics(),
             children: [
+              const RegisterIntro(),
               RegisterContentWidget(
-                imageUrl: 'https://picsum.photos/id/1/200/200',
-                child: nickNameInput(
+                imageUrl: 'name.png',
+                child: registerInput(
+                    title: 'Create a nickname',
+                    hint: '@Nickname',
                     onValidator: _registerController.validator,
-                    controllerNickName: _registerController.userNameController),
+                    controller: _registerController.userNameController),
               ),
+              RegisterContentWidget(
+                imageUrl: 'date.png',
+                child: registerInput(
+                    title: 'Date of birth',
+                    hint: '@Birthday',
+                    onValidator: _registerController.validator,
+                    controller: _registerController.birthdayController),
+              ),
+              RegisterContentWidget(
+                imageUrl: 'password.png',
+                child: Column(
+                  children: [
+                    registerInput(
+                        title: 'Your password',
+                        hint: '**********',
+                        onValidator: _registerController.validator,
+                        controller: _registerController.passwordController),
+                    registerInput(
+                        title: 'Repeat your password',
+                        hint: '**********',
+                        onValidator: _registerController.validator,
+                        controller:
+                            _registerController.confirmPasswordController),
+                  ],
+                ),
+              ),
+              RegisterContentWidget(
+                imageUrl: 'phone.png',
+                child: Column(
+                  children: [
+                    registerInput(
+                        title: '',
+                        hint: '8811****',
+                        onValidator: _registerController.validator,
+                        controller: _registerController.phoneController),
+                  ],
+                ),
+              ),
+              RegisterContentWidget(
+                  imageUrl: 'verify_phone.png', child: VerifyPinPut()),
+              const RegisterReward(),
             ],
           ),
         ),

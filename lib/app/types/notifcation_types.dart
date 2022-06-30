@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_tomyo/app/modules/0_initial/controllers/auth_controller.dart';
 import 'package:pocket_tomyo/app/services/local_storage.dart';
 
 enum NotifcationTypes {
@@ -27,10 +28,7 @@ extension NotifcationType on NotifcationTypes {
       case NotifcationTypes.rank:
         return ElevatedButton(
           onPressed: () async {
-            Get.find<LocalStorageService>().save(LocalStorageKey.theme, 'dark');
-            final result = await Get.find<LocalStorageService>()
-                .read(LocalStorageKey.theme);
-            print(result ?? 'null');
+            // await Get.find<AuthController>().logOut();
           },
           child: Transform.rotate(
             /// [Rotate] it with 45˚ (π/4)
