@@ -24,7 +24,6 @@ class ProgramsView extends MainView {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const ProfileCard(height: 100),
             AppConstants.hTitleSpacing,
             Padding(
               padding: const EdgeInsets.fromLTRB(16.0, 6.0, 16.0, 16.0),

@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-/// [RecImageWidget] is a widget that displays a [NetworkImage] with a
+/// [NetWorkImageWidget] is a widget that displays a [NetworkImage] with a
 /// custom [placeholder] and decorations.
 /// It also has a [onTap] callback that is called when the image is tapped.
-class RecImageWidget extends StatelessWidget {
+class NetWorkImageWidget extends StatelessWidget {
   /// TODO: add ErrorWidget
-  const RecImageWidget({
+  const NetWorkImageWidget({
     Key? key,
     required this.height,
     required this.imageUrl,

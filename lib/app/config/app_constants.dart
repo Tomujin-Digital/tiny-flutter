@@ -21,7 +21,7 @@ class AppConstants {
   static const EdgeInsets padding16 = EdgeInsets.all(16.0);
   static const EdgeInsets padding40 = EdgeInsets.symmetric(horizontal: 4.0);
   static const double elevition = 16.0;
-  static BorderRadius borderRadius = BorderRadius.circular(10.0);
+  static BorderRadius borderRadius = BorderRadius.circular(12.0);
 
   //  todo: add more constants here
 }

@@ -29,7 +29,7 @@ class LeaderBoardItem extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                RecImageWidget(
+                NetWorkImageWidget(
                   height: height - horizontalMargin * 4,
                   imageUrl: 'https://picsum.photos/id/1/200/300',
                   borderRadius: BorderRadius.circular(9999.0),

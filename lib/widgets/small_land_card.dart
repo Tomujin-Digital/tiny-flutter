@@ -30,7 +30,7 @@ class SmallLandCard extends StatelessWidget {
         child: Row(
           children: [
             /// Image
-            RecImageWidget(
+            NetWorkImageWidget(
               height: 80,
               imageUrl: imageUrl,
               borderRadius: BorderRadius.circular(12.0),
@@ -41,19 +41,19 @@ class SmallLandCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 8.0),
-                  Text(
+                  const Text(
                     '   school.name',
                     maxLines: 1,
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
                         overflow: TextOverflow.ellipsis,
                         color: Colors.black),
                   ),
                   const SizedBox(height: 8.0),
-                  Text(
+                  const Text(
                     'school.landName',
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                         color: AppConstants.colorGrey1),
@@ -68,9 +68,9 @@ class SmallLandCard extends StatelessWidget {
                           size: 16.0,
                         ),
                       const SizedBox(width: 4.0),
-                      Text(
+                      const Text(
                         '${5}',
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                             color: AppConstants.colorGrey1),
@@ -85,11 +85,11 @@ class SmallLandCard extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(width: 4.0),
-                      Flexible(
+                      const Flexible(
                         child: Text(
                           'Students ${123}',
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
                               color: AppConstants.colorGrey1),

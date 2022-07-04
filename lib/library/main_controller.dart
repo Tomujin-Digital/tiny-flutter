@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MainController extends GetxController {
-  final isLoading = false.obs;
-  final hasNetwork = false.obs;
-  final hasError = false.obs;
+  RxBool isLoading = false.obs;
+  RxBool hasNetwork = false.obs;
+  RxBool hasError = false.obs;
 
   // void setLoading(bool value) => _isLoading.value = value;
 

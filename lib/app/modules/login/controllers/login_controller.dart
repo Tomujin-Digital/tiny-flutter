@@ -49,8 +49,11 @@ class LoginController extends GetxController {
         email: emailController.text,
         password: passwordController.text,
       );
+      emailController.clear();
+      passwordController.clear();
       isLoading.value = false;
     }
     isLoading.value = false;
+    passwordController.clear();
   }
 }

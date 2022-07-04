@@ -17,7 +17,7 @@ class AppTheme {
       ),
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       linearMinHeight: 16.0,
-      color: Color(0xFF55C595),
+      color: green,
       refreshBackgroundColor: Colors.white,
       linearTrackColor: Color(0xFFF2F2F2),
     ),

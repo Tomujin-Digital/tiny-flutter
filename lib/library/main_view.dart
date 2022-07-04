@@ -17,7 +17,7 @@ class MainView extends StatelessWidget {
   }
 
   /// Ашиглагдаж буй жагсаалт [List] - үүд хоосон [isEmpty] байх үед харуулах [Widget].
-  Widget empty(ListType type) {
+  static Widget empty(ListType type) {
     switch (type) {
       case ListType.programs:
         return const _EmptyWidget(
@@ -41,7 +41,7 @@ class MainView extends StatelessWidget {
   }
 
   ///  [isLoading] нь хуудас ачааллаж байхад харуулна.
-  Widget isLoading() {
+  static Widget isLoading() {
     return const Center(
       child: CircularProgressIndicator(),
     );

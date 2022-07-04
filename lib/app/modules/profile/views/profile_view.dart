@@ -70,9 +70,6 @@ class ProfileView extends MainView {
                       centerTitle: true,
                       title: Column(
                         children: [
-                          ProfileCard(
-                            height: height == 300 ? 100 : 80,
-                          ),
                           height == 300
                               ? Column(
                                   children: [

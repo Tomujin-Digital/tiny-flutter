@@ -2,7 +2,9 @@ import 'dart:math';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pocket_tomyo/app/config/app_constants.dart';
+import 'package:pocket_tomyo/app/modules/0_initial/controllers/auth_controller.dart';
 import 'package:pocket_tomyo/widgets/rec_image_widget.dart';
 
 class PostWidget extends StatelessWidget {
@@ -33,7 +35,7 @@ class _PostTop extends StatelessWidget {
           Stack(
             clipBehavior: Clip.none,
             children: [
-              RecImageWidget(
+              NetWorkImageWidget(
                 onTap: () {
                   // TODO navigate to community detail
                 },
@@ -53,7 +55,7 @@ class _PostTop extends StatelessWidget {
                 left: 12,
                 child: Align(
                   alignment: Alignment.bottomRight,
-                  child: RecImageWidget(
+                  child: NetWorkImageWidget(
                     onTap: () {
                       // TODO navigate to profile detail
                     },
@@ -131,10 +133,13 @@ class _PostActions extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text('Reaction by Bilegt'),
-              Spacer(),
+              const Text('Reaction by Bilegt'),
+              const Spacer(),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  // log out
+                  Get.find<AuthController>().logOut();
+                },
                 icon: const Icon(Icons.favorite_border),
               ),
               IconButton(
@@ -147,7 +152,7 @@ class _PostActions extends StatelessWidget {
               ),
             ],
           ),
-          Text(
+          const Text(
               'Амжилт, зорилго, мөрөөдөлд нь хүргэх хамгийн баталгаатай арга бол бага багаар урагшаа алхалах юм шүү. '),
           AppConstants.vElementSpacing,
         ],

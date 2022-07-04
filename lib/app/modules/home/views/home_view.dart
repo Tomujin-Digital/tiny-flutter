@@ -12,9 +12,7 @@ class HomeView extends MainView {
   @override
   Widget build(BuildContext context) {
     return homeController.isLoading.value
-        ? const Center(
-            child: CircularProgressIndicator(),
-          )
+        ? MainView.isLoading()
         : ListView.builder(
             itemCount: 3,
             itemBuilder: (context, index) {

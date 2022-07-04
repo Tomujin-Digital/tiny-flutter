@@ -63,7 +63,7 @@ class LandCard extends StatelessWidget {
                         AppConstants.vElementSpacing,
                         Row(
                           children: [
-                            RecImageWidget(
+                            NetWorkImageWidget(
                               imageUrl:
                                   'https://www.videogameschronicle.com/files/2021/08/SuperMarioBrosArtwork2.jpg',
                               height: 60.0,
