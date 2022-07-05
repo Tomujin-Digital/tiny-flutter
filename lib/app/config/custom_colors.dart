@@ -32,4 +32,4 @@ const green = Color(0xFF55C595);
 // const onBackground = Color(0xFF000000);
 // const onSurface = Color(0xFF000000);
 // const onError = Color(0xFFFFFFFF);
-const buttonStyle = TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500);
+const buttonStyle = TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold);

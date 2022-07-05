@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "473448110340",
+    "project_id": "multigaming-97df9",
+    "storage_bucket": "multigaming-97df9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473448110340:android:c44fc7ac1029a03e37d851",
+        "android_client_info": {
+          "package_name": "com.tomujin.elfverse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473448110340-t8be385nhp0lcr813polc85re35tl1c2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAojW3m4jVTktCAMZsr-uRc4gNxK8x-quU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473448110340-t8be385nhp0lcr813polc85re35tl1c2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473448110340:android:5967438c799e48a937d851",
+        "android_client_info": {
+          "package_name": "tomujindigital.Tiny"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473448110340-t8be385nhp0lcr813polc85re35tl1c2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAojW3m4jVTktCAMZsr-uRc4gNxK8x-quU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473448110340-t8be385nhp0lcr813polc85re35tl1c2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -43,8 +43,9 @@ class LoginView extends MainView {
                   color: Colors.white,
                   height: 56.0,
                 ),
-                const Spacer(),
-                const Spacer(),
+                const Spacer(
+                  flex: 2,
+                ),
                 TinyButton(
                   onPressed: () => Get.to(
                     () => BattleDirectoryPage(),
@@ -133,7 +134,9 @@ class LoginView extends MainView {
             onPressed: () {},
             child: const Text(
               'You forgot the password?',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Colors.white,
+              ),
             ),
           ),
           const SizedBox(height: 32.0),
