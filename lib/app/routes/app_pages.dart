@@ -18,6 +18,8 @@ import '../modules/programs/bindings/programs_binding.dart';
 import '../modules/programs/views/programs_view.dart';
 import '../modules/tiny/bindings/tiny_binding.dart';
 import '../modules/tiny/views/tiny_view.dart';
+import '../modules/wallet/bindings/wallet_binding.dart';
+import '../modules/wallet/views/wallet_view.dart';
 
 // ignore_for_file: constant_identifier_names
 
@@ -73,6 +75,11 @@ class AppPages {
       name: _Paths.PACKAGE,
       page: () => const PackageView(),
       binding: PackageBinding(),
+    ),
+    GetPage(
+      name: _Paths.WALLET,
+      page: () => WalletView(),
+      binding: WalletBinding(),
     ),
   ];
 }
