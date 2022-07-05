@@ -17,6 +17,7 @@ abstract class Routes {
   static const POST_DETAIL = _Paths.POST_DETAIL;
   static const TINY = _Paths.TINY;
   static const BATTLE = _Paths.TINY + _Paths.BATTLE;
+  static const PACKAGE = _Paths.PACKAGE;
 }
 
 abstract class _Paths {
@@ -33,4 +34,5 @@ abstract class _Paths {
   static const REGISTER = '/register';
   static const TINY = '/tiny';
   static const BATTLE = '/battle';
+  static const PACKAGE = '/package';
 }

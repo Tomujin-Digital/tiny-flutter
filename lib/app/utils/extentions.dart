@@ -17,6 +17,11 @@ extension Captilize on String {
     return "${this[0].toUpperCase()}${substring(1)}";
   }
 
+  passwordRequirements() {
+    RegExp regEx = RegExp(r"(?=.*[a-z])(?=.*[A-Z])\w+");
+    return regEx.hasMatch(this);
+  }
+
   String convertDateTime(DateTime dateTime) {
     return "${dateTime.year}/${dateTime.month}/${dateTime.day}";
   }

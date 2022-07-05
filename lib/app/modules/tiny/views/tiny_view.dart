@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:pocket_tomyo/app/config/app_constants.dart';
 import 'package:pocket_tomyo/app/config/custom_colors.dart';
+import 'package:pocket_tomyo/app/modules/package/views/package_view.dart';
 import 'package:pocket_tomyo/app/modules/tiny/views/battle_view.dart';
 import 'package:pocket_tomyo/widgets/buttons/image_buttons.dart';
 import 'package:pocket_tomyo/widgets/buttons/touchable_scale.dart';
@@ -30,38 +31,39 @@ class TinyView extends GetView<TinyController> {
                 Image.asset('assets/images/tiny/avatar.png'),
                 AppConstants.vTitleSpacing,
                 TouchableScale(
-                    child: Container(
-                      width: Get.width * 0.4,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8, horizontal: 12.0),
-                      decoration: BoxDecoration(
-                        color: green,
-                        borderRadius: BorderRadius.circular(
-                          12.0,
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            'assets/images/tiny/package.png',
-                            fit: BoxFit.cover,
-                          ),
-                          AppConstants.hElementSpacing,
-                          const Text(
-                            'Package',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
+                  onPressed: () {
+                    Get.to(() => PackageView());
+                  },
+                  child: Container(
+                    width: Get.width * 0.4,
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8, horizontal: 12.0),
+                    decoration: BoxDecoration(
+                      color: green,
+                      borderRadius: BorderRadius.circular(
+                        12.0,
                       ),
                     ),
-                    onPressed: () {
-                      Get.toNamed('/');
-                    }),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          'assets/images/tiny/package.png',
+                          fit: BoxFit.cover,
+                        ),
+                        AppConstants.hElementSpacing,
+                        const Text(
+                          'Package',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 AppConstants.vTitleSpacing,
                 SizedBox(height: Get.height * 0.05),
                 Row(

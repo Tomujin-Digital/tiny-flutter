@@ -61,7 +61,7 @@ class RegisterView extends MainView {
               ),
               RegisterContentWidget(
                 imageUrl: 'date.png',
-                child: registerInput(
+                child: birthDate(
                     title: 'Date of birth',
                     hint: '@Birthday',
                     onValidator: _registerController.validator,
@@ -71,17 +71,10 @@ class RegisterView extends MainView {
                 imageUrl: 'password.png',
                 child: Column(
                   children: [
-                    registerInput(
+                    passWordInput(
                         title: 'Your password',
-                        hint: '**********',
-                        onValidator: _registerController.validator,
-                        controller: _registerController.passwordController),
-                    registerInput(
-                        title: 'Repeat your password',
-                        hint: '**********',
-                        onValidator: _registerController.validator,
-                        controller:
-                            _registerController.confirmPasswordController),
+                        hint: '********',
+                        anotherTitle: 'Repeat password'),
                   ],
                 ),
               ),
@@ -89,11 +82,9 @@ class RegisterView extends MainView {
                 imageUrl: 'phone.png',
                 child: Column(
                   children: [
-                    registerInput(
-                        title: '',
-                        hint: '8811****',
-                        onValidator: _registerController.validator,
-                        controller: _registerController.phoneController),
+                    phoneInput(
+                      title: 'Phone number',
+                    ),
                   ],
                 ),
               ),
@@ -108,7 +99,9 @@ class RegisterView extends MainView {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: TinyButton(
-              onPressed: _registerController.nextPage,
+              onPressed: _registerController.isLoading.value
+                  ? () {}
+                  : _registerController.onPressed,
               child: Text(
                 _registerController.isLast.value ? 'Continue' : 'Next',
                 style: buttonStyle,

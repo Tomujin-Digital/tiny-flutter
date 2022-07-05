@@ -29,6 +29,8 @@ class AnimatedInput extends StatelessWidget {
       curve: Curves.easeInOutCubic,
       alignment: Alignment.topCenter,
       child: TextFormField(
+        // password form field
+        obscureText: label == '********' ? true : false,
         // todo input decoration
         decoration: InputDecoration(
           labelText: label,

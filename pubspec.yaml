@@ -21,6 +21,7 @@ dependencies:
   pinput: 2.2.11
   flutter: 
     sdk: flutter
+  
 
 dev_dependencies: 
   flutter_lints: 2.0.1

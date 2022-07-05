@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,6 +6,7 @@ import 'package:pinput/pinput.dart';
 import 'package:pocket_tomyo/app/config/app_constants.dart';
 import 'package:pocket_tomyo/app/config/custom_colors.dart';
 import 'package:pocket_tomyo/app/modules/login/controllers/register_controller.dart';
+import 'package:pocket_tomyo/app/services/auth_repository.dart';
 
 class VerifyPinPut extends StatelessWidget {
   final registerController = Get.find<RegisterController>();
@@ -49,7 +51,7 @@ class VerifyPinPut extends StatelessWidget {
         ),
         AppConstants.vTitleSpacing,
         Pinput(
-          length: 4,
+          length: 6,
           controller: registerController.otpVerifyController,
           // focusNode: focusNode,
           defaultPinTheme: defaultPinTheme,
@@ -63,8 +65,23 @@ class VerifyPinPut extends StatelessWidget {
           ),
         ),
         TextButton(
-            onPressed: () {},
-            child: Text(
+            onPressed: () async {
+              try {
+                await Get.find<AuthRepository>()
+                    .sendOtp(registerController.phoneController.text);
+              } on DioError catch (e) {
+                print(e.response?.data['message']);
+                Get.snackbar(
+                  'Error',
+                  e.response?.data['message'],
+                  backgroundColor: Colors.red,
+                  colorText: Colors.white,
+                );
+              } on Error catch (e) {
+                print(e);
+              }
+            },
+            child: const Text(
               'Resend OTP?',
               style: TextStyle(
                 color: secondary,
