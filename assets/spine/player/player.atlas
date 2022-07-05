@@ -1,0 +1,76 @@
+
+player.png
+size: 378,505
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm
+  rotate: true
+  xy: 149, 228
+  size: 65, 96
+  orig: 65, 96
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 149, 293
+  size: 198, 106
+  orig: 198, 106
+  offset: 0, 0
+  index: -1
+ear
+  rotate: true
+  xy: 317, 56
+  size: 58, 59
+  orig: 58, 59
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 213, 199
+  size: 18, 29
+  orig: 18, 29
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 0, 0
+  size: 317, 181
+  orig: 317, 181
+  offset: 0, 0
+  index: -1
+skin/hat
+  rotate: true
+  xy: 0, 181
+  size: 324, 149
+  orig: 449, 312
+  offset: 41, 92
+  index: -1
+skin/melee_w
+  rotate: true
+  xy: 317, 114
+  size: 179, 61
+  orig: 300, 97
+  offset: 57, 16
+  index: -1
+skin/shirt
+  rotate: false
+  xy: 149, 399
+  size: 198, 106
+  orig: 198, 106
+  offset: 0, 0
+  index: -1
+skin/shoes
+  rotate: false
+  xy: 245, 195
+  size: 64, 98
+  orig: 64, 98
+  offset: 0, 0
+  index: -1
+skin/shoulder
+  rotate: false
+  xy: 149, 195
+  size: 64, 33
+  orig: 64, 33
+  offset: 0, 0
+  index: -1
