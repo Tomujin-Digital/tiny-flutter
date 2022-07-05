@@ -135,18 +135,12 @@ class ApiHttpClient {
   ApiHttpClient() {
     final authCtrl = Get.find<AuthController>();
     dio.interceptors.clear();
-
     dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (
           RequestOptions options,
           RequestInterceptorHandler handler,
         ) async {
-          print('onRequest: ${options.path}');
-          print('onRequest: this is called before request is sent');
-          if (authLock != null) {
-            await authLock!.future;
-          }
           final refreshToken = await storage.read(LocalStorageKey.refrshToken);
           final accessToken = await storage.read(LocalStorageKey.token);
           if (accessToken != null) {
@@ -154,6 +148,13 @@ class ApiHttpClient {
           }
 
           handler.next(options);
+        },
+        onError: (DioError error, ErrorInterceptorHandler handler) {
+          if (error.response?.statusCode == 401 ||
+              error.response?.statusCode == 403) {
+            authCtrl.logOut();
+          }
+          return handler.next(error);
         },
         onResponse: (
           response,
@@ -177,10 +178,8 @@ class ApiHttpClient {
             if (token == null) {
               authCtrl.logOut();
             }
-
             response.requestOptions.headers['Authorization'] =
                 'Bearer ${token}}';
-
             final opts = Options(
               method: response.requestOptions.method,
               headers: response.requestOptions.headers,

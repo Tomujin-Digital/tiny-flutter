@@ -14,7 +14,7 @@ class WalletCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider(
       options: CarouselOptions(
-        height: 216.0,
+        height: 250.0,
         aspectRatio: 16 / 9,
         viewportFraction: 0.9,
         enableInfiniteScroll: false,
