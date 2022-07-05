@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:pocket_tomyo/app/services/local_storage.dart';
 import 'package:pocket_tomyo/app/utils/api_http_client.dart';
 
+import '../../../services/auth_repository.dart';
 import '../../../utils/auth_api_http_client.dart';
 
 enum AuthStatus {
@@ -18,6 +19,7 @@ class AuthController extends GetxController {
   final status = AuthStatus.loggedOut.obs;
 
   final storage = Get.find<LocalStorageService>();
+  final _repository = Get.find<AuthRepository>();
 
 // Write value
 
@@ -66,7 +68,18 @@ class AuthController extends GetxController {
     checkToken();
   }
 
-  refreshTokenFromApi() {}
+  refreshTokenFromApi() async {
+    final refreshToken = await storage.read(LocalStorageKey.refrshToken);
+    try {
+      await _repository.refreshToken(refreshToken ?? "");
+    } on DioError catch (e) {
+      final message = e.response?.data['message'];
+      print(e.response?.data);
+      Get.snackbar('Error', message ?? 'Something went wrong',
+          backgroundColor: Colors.red, colorText: Colors.white);
+    }
+  }
+
   @override
   void onReady() {
     super.onReady();
