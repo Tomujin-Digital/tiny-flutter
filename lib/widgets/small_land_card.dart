@@ -25,7 +25,7 @@ class SmallLandCard extends StatelessWidget {
         // width: screenSize.width - 48,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          border: Border.all(color: AppConstants.colorGrey2),
+          border: Border.all(color: C.colorGrey2),
         ),
         child: Row(
           children: [
@@ -56,7 +56,7 @@ class SmallLandCard extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: AppConstants.colorGrey1),
+                        color: C.colorGrey1),
                   ),
                   const SizedBox(height: 8.0),
                   Row(
@@ -73,14 +73,14 @@ class SmallLandCard extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
-                            color: AppConstants.colorGrey1),
+                            color: C.colorGrey1),
                       ),
                       const SizedBox(width: 4.0),
                       Container(
                         width: 2,
                         height: 14,
                         decoration: BoxDecoration(
-                          color: AppConstants.colorGrey2,
+                          color: C.colorGrey2,
                           borderRadius: BorderRadius.circular(2.0),
                         ),
                       ),
@@ -92,7 +92,7 @@ class SmallLandCard extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
-                              color: AppConstants.colorGrey1),
+                              color: C.colorGrey1),
                           maxLines: 1,
                         ),
                       ),

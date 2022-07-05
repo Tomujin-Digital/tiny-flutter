@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:pocket_tomyo/app/config/custom_colors.dart';
+import 'package:pocket_tomyo/app/modules/0_initial/widgets/nav_tiny.dart';
 
 import 'package:pocket_tomyo/app/types/tab_types.dart';
 import 'package:pocket_tomyo/library/main_view.dart';
+import 'package:pocket_tomyo/widgets/buttons/touchable_scale.dart';
 
 import '../../login/controllers/login_controller.dart';
 import '../../login/views/login_view.dart';
@@ -33,41 +35,29 @@ class InitialView extends MainView {
                 onDestinationSelected: (value) {
                   con.changeIndex(value);
                 },
+                elevation: 8.0,
                 destinations: TabType.values.map(
                   (e) {
                     int index = TabType.values.indexOf(e);
+
+                    Widget body;
+
                     if (index == 2) {
-                      return Container(
-                        padding: const EdgeInsets.all(1),
-                        decoration: ShapeDecoration(
-                          gradient: const LinearGradient(
-                              colors: [primary, secondary]),
-                          shape: SmoothRectangleBorder(
-                            borderRadius: SmoothBorderRadius(
-                              cornerRadius: 10,
-                              cornerSmoothing: 0.7,
-                            ),
-                          ),
-                        ),
-                        child: Container(
-                          // margin: EdgeInsets.all(4),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: NavigationDestination(
-                            icon: index == con.getselectedIndex
-                                ? e.tabActiveWidget
-                                : e.tabWidget,
-                            label: '',
-                          ),
-                        ),
+                      body = NavBarTinyBorder(
+                        child: index == con.getselectedIndex
+                            ? e.tabActiveWidget
+                            : e.tabWidget,
                       );
-                    }
-                    return NavigationDestination(
-                      icon: index == con.getselectedIndex
+                    } else {
+                      body = index == con.getselectedIndex
                           ? e.tabActiveWidget
-                          : e.tabWidget,
-                      label: '',
+                          : e.tabWidget;
+                    }
+                    return TouchableScale(
+                      child: body,
+                      onPressed: () {
+                        con.changeIndex(index);
+                      },
                     );
                   },
                 ).toList(),

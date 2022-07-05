@@ -10,6 +10,13 @@ class AppTheme {
           elevation: 0.0,
         ),
 
+        colorScheme: ColorScheme.light().copyWith(
+          primary: kPink,
+          secondary: kPink,
+          onPrimary: Colors.white,
+          onSecondary: Colors.white,
+        ),
+
         textTheme: ThemeData.light()
             .textTheme
             .copyWith(

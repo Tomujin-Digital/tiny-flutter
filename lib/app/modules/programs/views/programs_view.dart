@@ -24,7 +24,7 @@ class ProgramsView extends MainView {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            AppConstants.hTitleSpacing,
+            C.hTitleSpacing,
             Padding(
               padding: const EdgeInsets.fromLTRB(16.0, 6.0, 16.0, 16.0),
               child: SizedBox(
@@ -34,7 +34,7 @@ class ProgramsView extends MainView {
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: AppConstants.borderRadius,
+                      borderRadius: C.borderRadius,
                     ),
                     labelText: 'Search',
                     prefix: SvgPicture.asset(

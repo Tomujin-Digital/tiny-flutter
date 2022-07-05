@@ -21,7 +21,7 @@ class LeaderboardView extends MainView {
             itemCount: 10,
             itemBuilder: (context, index) {
               return Padding(
-                padding: AppConstants.padding168,
+                padding: C.padding168,
                 child: LeaderBoardItem(index: index + 1),
               );
             },

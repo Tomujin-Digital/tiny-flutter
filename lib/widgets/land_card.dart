@@ -18,12 +18,12 @@ class LandCard extends StatelessWidget {
         // Import land model
       },
       child: Container(
-        margin: AppConstants.padding168,
+        margin: C.padding168,
         height: 240.0,
         width: Get.width * 0.8,
         decoration: BoxDecoration(
           border: Border.all(
-            color: AppConstants.colorGrey2,
+            color: C.colorGrey2,
             width: 1.0,
           ),
           image: const DecorationImage(
@@ -35,7 +35,7 @@ class LandCard extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           color: Colors.pink,
-          borderRadius: AppConstants.borderRadius,
+          borderRadius: C.borderRadius,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -50,7 +50,7 @@ class LandCard extends StatelessWidget {
                 ),
               ),
               child: Padding(
-                padding: AppConstants.padding168,
+                padding: C.padding168,
                 child: Row(
                   children: [
                     Column(
@@ -60,7 +60,7 @@ class LandCard extends StatelessWidget {
                           'Super Mario Bros',
                           style: AppTextStyles.greySubTitle,
                         ),
-                        AppConstants.vElementSpacing,
+                        C.vElementSpacing,
                         Row(
                           children: [
                             NetWorkImageWidget(
@@ -68,18 +68,18 @@ class LandCard extends StatelessWidget {
                                   'https://www.videogameschronicle.com/files/2021/08/SuperMarioBrosArtwork2.jpg',
                               height: 60.0,
                               border: Border.all(
-                                color: AppConstants.colorGrey1,
+                                color: C.colorGrey1,
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            AppConstants.hElementSpacing,
+                            C.hElementSpacing,
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text('Human International school',
                                     style: AppTextStyles.greySubTitle),
-                                AppConstants.vElementSpacing,
+                                C.vElementSpacing,
                                 // implement Rating widget
                                 Row(
                                   children: [
@@ -90,33 +90,33 @@ class LandCard extends StatelessWidget {
                                           size: 14.0,
                                           color: Colors.yellow,
                                         ),
-                                        AppConstants.hElementSpacing,
+                                        C.hElementSpacing,
                                         Icon(
                                           size: 14.0,
                                           Icons.star,
                                           color: Colors.yellow,
                                         ),
-                                        AppConstants.hElementSpacing,
+                                        C.hElementSpacing,
                                         Icon(
                                           size: 14.0,
                                           Icons.star,
                                           color: Colors.yellow,
                                         ),
-                                        AppConstants.hElementSpacing,
+                                        C.hElementSpacing,
                                         Icon(
                                           size: 14.0,
                                           Icons.star,
                                           color: Colors.yellow,
                                         ),
-                                        AppConstants.hElementSpacing,
+                                        C.hElementSpacing,
                                         Icon(
                                           size: 14.0,
                                           Icons.star,
-                                          color: AppConstants.colorGrey1,
+                                          color: C.colorGrey1,
                                         ),
                                       ],
                                     ),
-                                    AppConstants.hElementSpacing,
+                                    C.hElementSpacing,
                                     Text(
                                       '4.5 | ',
                                       style: AppTextStyles.greySubTitle,

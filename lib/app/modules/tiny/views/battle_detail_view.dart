@@ -99,7 +99,7 @@ class BattleDetailView extends GetView {
                               'assets/images/tiny/skill.png',
                               fit: BoxFit.cover,
                             ),
-                            AppConstants.hElementSpacing,
+                            C.hElementSpacing,
                             const Padding(
                               padding: EdgeInsets.symmetric(vertical: 22),
                               child: Text(
@@ -234,7 +234,7 @@ class BattleDetailView extends GetView {
                             'assets/images/tiny/journey.png',
                             fit: BoxFit.cover,
                           ),
-                          AppConstants.hElementSpacing,
+                          C.hElementSpacing,
                           const Text(
                             'Journey',
                             style: TextStyle(
@@ -267,7 +267,7 @@ class BattleDetailView extends GetView {
                             'assets/images/tiny/battle.png',
                             fit: BoxFit.cover,
                           ),
-                          AppConstants.hElementSpacing,
+                          C.hElementSpacing,
                           const Text(
                             'Battle',
                             style: TextStyle(

@@ -21,7 +21,7 @@ class BattleView extends GetView {
       ),
       body: SafeArea(
           child: Padding(
-        padding: AppConstants.padding168,
+        padding: C.padding168,
         child: ListView(
           children: [
             const Text(
@@ -29,7 +29,7 @@ class BattleView extends GetView {
               style: TextStyle(
                   color: secondary, fontWeight: FontWeight.bold, fontSize: 28),
             ),
-            AppConstants.vTitleSpacing,
+            C.vTitleSpacing,
             BattleCardWidget(
               isLocked: false,
               imagePath: 'assets/images/tiny/battle_back.png',
@@ -38,17 +38,17 @@ class BattleView extends GetView {
                 Get.to(() => BattleDetailView());
               },
             ),
-            AppConstants.vTitleSpacing,
+            C.vTitleSpacing,
             BattleCardWidget(
                 isLocked: true,
                 imagePath: 'assets/images/tiny/battle_back.png',
                 title: 'Boss Hunt'),
-            AppConstants.vTitleSpacing,
+            C.vTitleSpacing,
             BattleCardWidget(
                 isLocked: true,
                 imagePath: 'assets/images/tiny/battle_back.png',
                 title: 'Defence Battle'),
-            AppConstants.vTitleSpacing,
+            C.vTitleSpacing,
             BattleCardWidget(
                 isLocked: true,
                 imagePath: 'assets/images/tiny/battle_back.png',

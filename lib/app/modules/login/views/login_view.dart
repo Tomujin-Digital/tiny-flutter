@@ -80,7 +80,7 @@ class LoginView extends MainView {
             errorMessage: 'Нэвтрэх нэрээ оруулна уу',
             label: 'Username or Email',
           ),
-          AppConstants.vTitleSpacing,
+          C.vTitleSpacing,
           Obx(
             () => TextFormField(
               obscureText: _loginController.isVisible.value,
@@ -109,9 +109,9 @@ class LoginView extends MainView {
               },
             ),
           ),
-          AppConstants.vElementSpacing,
-          AppConstants.vElementSpacing,
-          AppConstants.vElementSpacing,
+          C.vElementSpacing,
+          C.vElementSpacing,
+          C.vElementSpacing,
           TinyButton(
             onPressed: () async {
               await _loginController.checkForm();
@@ -151,7 +151,7 @@ class LoginView extends MainView {
                 Text(
                   'Don\'t have an account?',
                 ),
-                AppConstants.hTitleSpacing,
+                C.hTitleSpacing,
                 Text(
                   'Sign up',
                   style: TextStyle(

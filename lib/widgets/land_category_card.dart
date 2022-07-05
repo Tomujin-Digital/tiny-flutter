@@ -9,14 +9,14 @@ class LandCategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppConstants.padding40,
+      padding: C.padding40,
       child: GestureDetector(
         onTap: () {},
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.0),
             border: Border.all(
-              color: AppConstants.colorGrey2,
+              color: C.colorGrey2,
               width: 2.0,
             ),
           ),
@@ -39,11 +39,11 @@ class LandCategoryCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                AppConstants.hElementSpacing,
+                C.hElementSpacing,
                 const Text(
                   'Land',
                   style: TextStyle(
-                    color: AppConstants.colorDarkBlue,
+                    color: C.colorDarkBlue,
                     fontSize: 11.0,
                   ),
                 ),

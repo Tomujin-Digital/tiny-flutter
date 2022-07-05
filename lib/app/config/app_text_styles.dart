@@ -5,7 +5,7 @@ import 'app_constants.dart';
 class AppTextStyles {
   static const TextStyle title = TextStyle(
     fontSize: 24.0,
-    color: AppConstants.colorDarkBlue,
+    color: C.colorDarkBlue,
     fontWeight: FontWeight.w600,
   );
 
@@ -16,7 +16,7 @@ class AppTextStyles {
   );
   static const TextStyle greySubTitle = TextStyle(
     fontSize: 14.0,
-    color: AppConstants.colorGrey1,
+    color: C.colorGrey1,
     fontWeight: FontWeight.w600,
   );
   static const TextStyle smallGrey = TextStyle(
@@ -26,7 +26,7 @@ class AppTextStyles {
   );
   static const TextStyle body = TextStyle(
     fontSize: 13,
-    color: AppConstants.colorGrey1,
+    color: C.colorGrey1,
   );
   static const TextStyle smallPrimary = TextStyle(
     fontSize: 13,

@@ -55,9 +55,11 @@ extension TabItem on TabType {
         svgPath += 'profile_active';
         break;
     }
-    return SvgPicture.asset(
-      height: 28.0,
-      '$svgPath.svg',
+    return Center(
+      child: SvgPicture.asset(
+        height: 28.0,
+        '$svgPath.svg',
+      ),
     );
   }
 

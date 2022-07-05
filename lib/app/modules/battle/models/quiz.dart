@@ -1,5 +1,3 @@
-import 'package:flutter/widgets.dart';
-
 class Quiz {
   final String id;
   final String question;
@@ -23,7 +21,9 @@ class Quiz {
       icon: json['icon'] as String,
       question: json['question'] as String,
       answers: (json['answers'] as List<dynamic>?)
-          ?.map((e) => QuizAnswer.fromJson(e as Map<String, dynamic>))
+          ?.map(
+            (e) => QuizAnswer.fromJson(e as Map<String, dynamic>),
+          )
           ?.toList(),
     );
   }

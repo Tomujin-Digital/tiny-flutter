@@ -29,7 +29,7 @@ class WalletView extends MainView {
       body: Column(
         children: [
           WalletCardWidget(),
-          AppConstants.vTitleSpacing,
+          C.vTitleSpacing,
           WalletHistoryWidget(),
         ],
       ),

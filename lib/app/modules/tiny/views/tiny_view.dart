@@ -26,12 +26,12 @@ class TinyView extends GetView<TinyController> {
             child: Column(
               children: [
                 const ProfileCard(),
-                AppConstants.vTitleSpacing,
+                C.vTitleSpacing,
                 _TopMenu(),
-                AppConstants.vTitleSpacing,
+                C.vTitleSpacing,
                 SizedBox(height: Get.height * 0.1),
                 Image.asset('assets/images/tiny/avatar.png'),
-                AppConstants.vTitleSpacing,
+                C.vTitleSpacing,
                 TouchableScale(
                   onPressed: () {
                     Get.to(() => PackageView());
@@ -54,7 +54,7 @@ class TinyView extends GetView<TinyController> {
                           'assets/images/tiny/package.png',
                           fit: BoxFit.cover,
                         ),
-                        AppConstants.hElementSpacing,
+                        C.hElementSpacing,
                         const Text(
                           'Package',
                           style: TextStyle(
@@ -66,7 +66,7 @@ class TinyView extends GetView<TinyController> {
                     ),
                   ),
                 ),
-                AppConstants.vTitleSpacing,
+                C.vTitleSpacing,
                 SizedBox(height: Get.height * 0.05),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -90,7 +90,7 @@ class TinyView extends GetView<TinyController> {
                                 'assets/images/tiny/journey.png',
                                 fit: BoxFit.cover,
                               ),
-                              AppConstants.hElementSpacing,
+                              C.hElementSpacing,
                               const Text(
                                 'Journey',
                                 style: TextStyle(
@@ -123,7 +123,7 @@ class TinyView extends GetView<TinyController> {
                                 'assets/images/tiny/battle.png',
                                 fit: BoxFit.cover,
                               ),
-                              AppConstants.hElementSpacing,
+                              C.hElementSpacing,
                               const Text(
                                 'Battle',
                                 style: TextStyle(
@@ -212,7 +212,7 @@ class _WalletButton extends StatelessWidget {
             SvgPicture.asset(
               'assets/svgs/tiny/wallet.svg',
             ),
-            AppConstants.hElementSpacing,
+            C.hElementSpacing,
             const Text(
               'Wallet',
               style: TextStyle(

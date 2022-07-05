@@ -32,7 +32,7 @@ class NotifcationWidget extends StatelessWidget {
               imageUrl: imageUrl,
               backgroundColor: Colors.pink,
               borderRadius: BorderRadius.circular(9999)),
-          AppConstants.hElementSpacing,
+          C.hElementSpacing,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -40,7 +40,7 @@ class NotifcationWidget extends StatelessWidget {
                 title,
                 style: Theme.of(context).textTheme.headline6,
               ),
-              AppConstants.vElementSpacing,
+              C.vElementSpacing,
               Text(
                 message,
                 style: Theme.of(context).textTheme.bodyText1,

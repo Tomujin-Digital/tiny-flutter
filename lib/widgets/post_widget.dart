@@ -15,7 +15,7 @@ class PostWidget extends StatelessWidget {
     return Column(
       children: const [
         _PostTop(),
-        AppConstants.vElementSpacing,
+        C.vElementSpacing,
         _PostContent(),
         _PostActions(),
       ],
@@ -47,7 +47,7 @@ class _PostTop extends StatelessWidget {
                   width: 48,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(9999.0),
-                      color: AppConstants.colorGrey1),
+                      color: C.colorGrey1),
                 ),
               ),
               Positioned(
@@ -67,14 +67,14 @@ class _PostTop extends StatelessWidget {
                       width: 48,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(9999.0),
-                          color: AppConstants.colorGrey1),
+                          color: C.colorGrey1),
                     ),
                   ),
                 ),
               ),
             ],
           ),
-          AppConstants.hTitleSpacing,
+          C.hTitleSpacing,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
@@ -154,7 +154,7 @@ class _PostActions extends StatelessWidget {
           ),
           const Text(
               'Амжилт, зорилго, мөрөөдөлд нь хүргэх хамгийн баталгаатай арга бол бага багаар урагшаа алхалах юм шүү. '),
-          AppConstants.vElementSpacing,
+          C.vElementSpacing,
         ],
       ),
     );

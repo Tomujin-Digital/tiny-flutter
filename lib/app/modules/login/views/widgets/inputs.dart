@@ -19,7 +19,7 @@ Widget registerInput(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AppConstants.vTitleSpacing,
+        C.vTitleSpacing,
         Row(
           children: [
             Text(
@@ -100,7 +100,7 @@ Widget phoneInput({
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AppConstants.vTitleSpacing,
+        C.vTitleSpacing,
         Text(
           title,
           style: const TextStyle(
@@ -132,7 +132,7 @@ Widget passWordInput(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AppConstants.vTitleSpacing,
+        C.vTitleSpacing,
         Text(
           title,
           style: const TextStyle(
@@ -154,7 +154,7 @@ Widget passWordInput(
           label: hint,
           errorMessage: 'Password must match',
         ),
-        AppConstants.vTitleSpacing,
+        C.vTitleSpacing,
         Text(
           anotherTitle,
           style: const TextStyle(
@@ -192,7 +192,7 @@ Widget birthDate(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AppConstants.vTitleSpacing,
+        C.vTitleSpacing,
         Text(
           title,
           style: const TextStyle(
@@ -296,7 +296,7 @@ Widget nameInput(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AppConstants.vTitleSpacing,
+        C.vTitleSpacing,
         Text(
           title,
           style: const TextStyle(

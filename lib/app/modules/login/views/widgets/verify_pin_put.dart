@@ -32,7 +32,7 @@ class VerifyPinPut extends StatelessWidget {
 
     return Column(
       children: [
-        AppConstants.vTitleSpacing,
+        C.vTitleSpacing,
         const Text(
           'VERIFY',
           style: TextStyle(
@@ -41,7 +41,7 @@ class VerifyPinPut extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        AppConstants.vTitleSpacing,
+        C.vTitleSpacing,
         const Text(
           'We have sent an OTP on your number',
           style: const TextStyle(color: Colors.grey),
@@ -49,7 +49,7 @@ class VerifyPinPut extends StatelessWidget {
         Text(
           registerController.phoneController.text,
         ),
-        AppConstants.vTitleSpacing,
+        C.vTitleSpacing,
         Pinput(
           length: 6,
           controller: registerController.otpVerifyController,

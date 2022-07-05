@@ -106,8 +106,7 @@ class ProfileView extends MainView {
                                                             .ellipsis,
                                                         maxLines: 3,
                                                       ),
-                                                      AppConstants
-                                                          .vTitleSpacing,
+                                                      C.vTitleSpacing,
                                                       Row(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment

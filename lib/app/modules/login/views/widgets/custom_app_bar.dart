@@ -50,7 +50,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
               ),
             ),
           ),
-          AppConstants.hTitleSpacing,
+          C.hTitleSpacing,
           for (int i = 0; i < totalPages; i++)
             Expanded(
               child: Row(
@@ -69,7 +69,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                       ),
                     ),
                   ),
-                  AppConstants.hElementSpacing,
+                  C.hElementSpacing,
                 ],
               ),
             ),

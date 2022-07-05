@@ -29,7 +29,7 @@ class BattleCardWidget extends StatelessWidget {
               image: DecorationImage(
                   image: AssetImage(imagePath), fit: BoxFit.cover),
               color: Colors.amber,
-              borderRadius: AppConstants.borderRadius,
+              borderRadius: C.borderRadius,
             ),
           ),
           isLocked

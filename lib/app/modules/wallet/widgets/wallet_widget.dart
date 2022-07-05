@@ -56,7 +56,7 @@ class WalletCardWidget extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          AppConstants.vElementSpacing,
+                          C.vElementSpacing,
                           Obx(() => Text(
                                 controller.balance.value.toString(),
                                 style: TextStyle(
@@ -65,7 +65,7 @@ class WalletCardWidget extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               )),
-                          AppConstants.vTitleSpacing,
+                          C.vTitleSpacing,
                           Text(
                             'Locked Amount',
                             style: TextStyle(
@@ -73,7 +73,7 @@ class WalletCardWidget extends StatelessWidget {
                               color: Color.fromRGBO(255, 255, 255, 0.6),
                             ),
                           ),
-                          AppConstants.vElementSpacing,
+                          C.vElementSpacing,
                           Text(
                             '220.00 elfc',
                             style: TextStyle(
@@ -90,7 +90,7 @@ class WalletCardWidget extends StatelessWidget {
                       )
                     ],
                   ),
-                  AppConstants.vTitleSpacing,
+                  C.vTitleSpacing,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [

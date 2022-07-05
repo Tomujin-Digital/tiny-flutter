@@ -22,10 +22,10 @@ class LeaderBoardItem extends StatelessWidget {
           height: height - horizontalMargin * 2,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppConstants.colorGrey2),
+            border: Border.all(color: C.colorGrey2),
           ),
           child: Padding(
-            padding: AppConstants.padding168,
+            padding: C.padding168,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -33,7 +33,7 @@ class LeaderBoardItem extends StatelessWidget {
                   height: height - horizontalMargin * 4,
                   imageUrl: 'https://picsum.photos/id/1/200/300',
                   borderRadius: BorderRadius.circular(9999.0),
-                  backgroundColor: AppConstants.primaryColorPink,
+                  backgroundColor: C.primaryColorPink,
                 ),
                 Column(
                   children: [
