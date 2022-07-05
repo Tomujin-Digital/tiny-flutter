@@ -6,10 +6,12 @@ import 'package:pocket_tomyo/app/config/app_constants.dart';
 import 'package:pocket_tomyo/app/config/custom_colors.dart';
 import 'package:pocket_tomyo/app/modules/package/views/package_view.dart';
 import 'package:pocket_tomyo/app/modules/tiny/views/battle_view.dart';
+import 'package:pocket_tomyo/app/modules/wallet/views/wallet_view.dart';
 import 'package:pocket_tomyo/widgets/buttons/image_buttons.dart';
 import 'package:pocket_tomyo/widgets/buttons/touchable_scale.dart';
 
 import '../../../../widgets/profile_card.dart';
+import '../../wallet/bindings/wallet_binding.dart';
 import '../controllers/tiny_controller.dart';
 
 class TinyView extends GetView<TinyController> {
@@ -186,7 +188,9 @@ class _WalletButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TouchableScale(
-      onPressed: () {},
+      onPressed: () {
+        Get.to(() => WalletView(), binding: WalletBinding());
+      },
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: 24.0,
