@@ -14,6 +14,7 @@ void main() async {
 
   /// Initialize the app services
   await initServices();
+
   runApp(
     GetMaterialApp(
       scrollBehavior: DesktopScrollBehavior(),

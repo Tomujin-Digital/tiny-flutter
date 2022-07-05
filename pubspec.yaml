@@ -2,10 +2,16 @@ name: pocket_tomyo
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment: 
+environment:
   sdk: '>=2.17.1 <3.0.0'
 
-dependencies: 
+dependencies:
+  collection: ^1.16.0
+  get_it: ^7.2.0
+
+  spine_flutter:
+    git: https://github.com/khulegu/spine-flutter-custom.git
+
   cupertino_icons: ^1.0.2
   get: 4.6.5
   dio: 4.0.6
@@ -19,17 +25,16 @@ dependencies:
   figma_squircle: ^0.5.3
   hive: 2.2.2
   pinput: 2.2.11
-  flutter: 
+  flutter:
     sdk: flutter
-  
 
-dev_dependencies: 
+dev_dependencies:
   flutter_lints: 2.0.1
-  flutter_test: 
+  flutter_test:
     sdk: flutter
 
-flutter: 
-  assets: 
+flutter:
+  assets:
     - assets/locales/
     - assets/svgs/
     - assets/images/
@@ -37,4 +42,31 @@ flutter:
     - assets/svgs/profile/
     - assets/images/tiny/
     - assets/svgs/tiny/
+
+    - assets/
+    - assets/characters/
+    - assets/png/
+    - assets/spine/player/
+    - assets/spine/boss/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: fonts/Inter/static/Inter-Regular.ttf
+        - asset: fonts/Inter/static/Inter-Medium.ttf
+          weight: 500
+        - asset: fonts/Inter/static/Inter-Bold.ttf
+          weight: 700
+        - asset: fonts/Inter/static/Inter-Black.ttf
+          weight: 900
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins/Poppins-Regular.ttf
+        - asset: fonts/Poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: fonts/Poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: fonts/Poppins/Poppins-Black.ttf
+          weight: 900
+
   uses-material-design: true

@@ -1,15 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:pocket_tomyo/app/config/app_constants.dart';
 import 'package:pocket_tomyo/app/config/custom_colors.dart';
-import 'package:pocket_tomyo/app/modules/0_initial/controllers/auth_controller.dart';
-import 'package:pocket_tomyo/app/routes/app_pages.dart';
 import 'package:pocket_tomyo/library/main_view.dart';
 import 'package:pocket_tomyo/widgets/buttons/filled_button.dart';
 import 'package:pocket_tomyo/widgets/inputs/animated_input.dart';
 
+import '../../battle/directory_page.dart';
 import '../controllers/login_controller.dart';
 import 'register_view.dart';
 
@@ -47,6 +45,12 @@ class LoginView extends MainView {
                 ),
                 const Spacer(),
                 const Spacer(),
+                TinyButton(
+                  onPressed: () => Get.to(
+                    () => BattleDirectoryPage(),
+                  ),
+                  child: const Text("Battle"),
+                ),
                 _buildLoginForm(),
                 const Spacer(),
               ],
