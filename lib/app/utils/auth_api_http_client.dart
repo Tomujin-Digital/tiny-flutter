@@ -5,7 +5,9 @@ import 'package:dio/dio.dart';
 /// No refresh. No token. Dio Http Client
 class AuthApiHttpClient {
   final dio = Dio(
-    BaseOptions(baseUrl: 'https://tiny-customer-dev.herokuapp.com/v1'),
+    BaseOptions(
+      baseUrl: 'https://tiny-customer-dev.herokuapp.com/v1',
+    ),
   );
 
   Future<dynamic> get<T>(

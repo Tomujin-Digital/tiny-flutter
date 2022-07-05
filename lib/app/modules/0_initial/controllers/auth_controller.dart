@@ -18,8 +18,6 @@ class AuthController extends GetxController {
   final status = AuthStatus.loggedOut.obs;
 
   final storage = Get.find<LocalStorageService>();
-  get token async => await storage.read(LocalStorageKey.token);
-  get refreshToken async => await storage.read(LocalStorageKey.refrshToken);
 
 // Write value
 
