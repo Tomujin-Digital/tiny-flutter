@@ -33,6 +33,7 @@ class AppTheme {
           style: ButtonStyle(
             textStyle: MaterialStateProperty.all(
               const TextStyle(
+                fontFamily: 'Poppins',
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
                 color: Colors.white,
