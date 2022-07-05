@@ -35,4 +35,5 @@ flutter:
     - assets/svgs/nav/
     - assets/svgs/profile/
     - assets/images/tiny/
+    - assets/svgs/tiny/
   uses-material-design: true

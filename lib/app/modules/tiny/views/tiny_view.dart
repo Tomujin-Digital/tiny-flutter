@@ -131,7 +131,7 @@ class TinyView extends GetView<TinyController> {
                           ),
                         ),
                         onPressed: () {
-                          Get.to(BattleView());
+                          Get.to(() => BattleView());
                         }),
                   ],
                 ),
@@ -203,7 +203,9 @@ class _WalletButton extends StatelessWidget {
         ),
         child: Row(
           children: [
-            SvgPicture.asset('assets/svgs/tiny/wallet.svg'),
+            SvgPicture.asset(
+              'assets/svgs/tiny/wallet.svg',
+            ),
             AppConstants.hElementSpacing,
             const Text(
               'Wallet',

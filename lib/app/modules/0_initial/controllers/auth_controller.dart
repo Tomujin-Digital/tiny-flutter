@@ -59,7 +59,10 @@ class AuthController extends GetxController {
           LocalStorageKey.refrshToken, response.data['refreshToken']);
       checkToken();
     } on DioError catch (e) {
-      print(e);
+      final message = e.response?.data['message'];
+
+      Get.snackbar('Error', message ?? 'Something went wrong',
+          backgroundColor: Colors.red, colorText: Colors.white);
     }
 
     checkToken();
