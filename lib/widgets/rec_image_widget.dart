@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// [NetWorkImageWidget] is a widget that displays a [NetworkImage] with a
@@ -69,7 +70,7 @@ class NetWorkImageWidget extends StatelessWidget {
               placeholder: (context, url) =>
                   placeHolder ??
                   const Center(
-                    child: CircularProgressIndicator(),
+                    child: CupertinoActivityIndicator(),
                   ),
               imageUrl: imageUrl,
               height: height,

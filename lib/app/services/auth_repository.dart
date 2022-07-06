@@ -28,7 +28,7 @@ class AuthRepository extends GetxService {
   }
 
   Future<dynamic> refreshToken(String refreshToken) async {
-    return await client.post('/auth/check', data: {
+    return await client.post('/auth/refresh', data: {
       "refreshToken": refreshToken,
     });
   }

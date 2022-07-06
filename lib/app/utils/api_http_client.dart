@@ -134,6 +134,8 @@ class ApiHttpClient {
 
   ApiHttpClient() {
     final authCtrl = Get.find<AuthController>();
+    final res = authCtrl.refreshTokenFromApi();
+    print('refresh token is here');
     dio.interceptors.clear();
     dio.interceptors.add(
       InterceptorsWrapper(
@@ -141,7 +143,11 @@ class ApiHttpClient {
           RequestOptions options,
           RequestInterceptorHandler handler,
         ) async {
+          print('DIO is requesting: ${options.path}');
           final refreshToken = await storage.read(LocalStorageKey.refrshToken);
+
+          print('refreshToken is here');
+          print(refreshToken);
           final accessToken = await storage.read(LocalStorageKey.token);
           if (accessToken != null) {
             options.headers['Authorization'] = 'Bearer $accessToken';
@@ -150,9 +156,12 @@ class ApiHttpClient {
           handler.next(options);
         },
         onError: (DioError error, ErrorInterceptorHandler handler) {
+          print(error);
+          print('dio is here xoxoxo');
           if (error.response?.statusCode == 401 ||
               error.response?.statusCode == 403) {
             authCtrl.logOut();
+            authCtrl.checkToken();
           }
           return handler.next(error);
         },
@@ -160,11 +169,9 @@ class ApiHttpClient {
           response,
           ResponseInterceptorHandler handler,
         ) async {
-          print('this is ethleast called');
           print(response.data);
           if (response.data['error'] == 'UnauthorizedError') {
             // Refresh token.
-
             if (authLock != null && !(authLock!.isCompleted)) {
               await authLock!.future;
             } else {

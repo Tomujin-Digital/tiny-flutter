@@ -13,9 +13,6 @@ enum AuthStatus {
 }
 
 class AuthController extends GetxController {
-  AuthController() {
-    print('this file is execued');
-  }
   final status = AuthStatus.loggedOut.obs;
 
   final storage = Get.find<LocalStorageService>();
@@ -25,7 +22,6 @@ class AuthController extends GetxController {
 
   @override
   void onInit() async {
-    print('AuthController: onInit');
     super.onInit();
     checkToken();
     // status.firstRebuild = false;
@@ -34,10 +30,8 @@ class AuthController extends GetxController {
   checkToken() async {
     final token = await storage.read(LocalStorageKey.token);
     if (token != null) {
-      print('logged in');
       status.value = AuthStatus.loggedIn;
     } else {
-      print('not logged in');
       status.value = AuthStatus.loggedOut;
     }
   }
@@ -69,13 +63,20 @@ class AuthController extends GetxController {
   }
 
   refreshTokenFromApi() async {
+    print('refreshing token');
     final refreshToken = await storage.read(LocalStorageKey.refrshToken);
+
     try {
-      await _repository.refreshToken(refreshToken ?? "");
+      final response = await _repository.refreshToken(refreshToken ?? "");
+
+      await storage.write(LocalStorageKey.token, response.data['accessToken']);
+      await storage.write(
+          LocalStorageKey.refrshToken, response.data['refreshToken']);
+      checkToken();
     } on DioError catch (e) {
       final message = e.response?.data['message'];
-      print(e.response?.data);
-      Get.snackbar('Error', message ?? 'Something went wrong',
+
+      Get.snackbar('Error', message.toString(),
           backgroundColor: Colors.red, colorText: Colors.white);
     }
   }

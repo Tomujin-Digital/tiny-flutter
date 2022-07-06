@@ -33,7 +33,7 @@ class LeaderBoardItem extends StatelessWidget {
                   height: height - horizontalMargin * 4,
                   imageUrl: 'https://picsum.photos/id/1/200/300',
                   borderRadius: BorderRadius.circular(9999.0),
-                  backgroundColor: C.primaryColorPink,
+                  backgroundColor: Colors.transparent,
                 ),
                 Column(
                   children: [

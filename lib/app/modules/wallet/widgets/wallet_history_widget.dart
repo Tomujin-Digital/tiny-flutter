@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import 'wallet_history_item_widget.dart';
+import '../controllers/wallet_controller.dart';
+import 'transaction_card.dart';
 
 class WalletHistoryWidget extends StatelessWidget {
-  const WalletHistoryWidget({Key? key}) : super(key: key);
-
+  WalletHistoryWidget({Key? key}) : super(key: key);
+  final controller = Get.put<WalletController>(WalletController());
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,12 +30,18 @@ class WalletHistoryWidget extends StatelessWidget {
             ],
           ),
         ),
-        ListView.builder(
+        Obx(
+          () => ListView.builder(
             shrinkWrap: true,
-            itemCount: 3,
+            itemCount: controller.transactions.length,
             itemBuilder: (context, index) {
-              return WalletHistoryItemWidget();
-            })
+              print(controller.transactions.length);
+              return TransactionCard(
+                transaction: controller.transactions[index],
+              );
+            },
+          ),
+        )
       ],
     );
   }

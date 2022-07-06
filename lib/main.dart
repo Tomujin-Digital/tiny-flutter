@@ -27,6 +27,7 @@ void main() async {
 
   runApp(
     GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       scrollBehavior: DesktopScrollBehavior(),
       initialBinding: DependencyCreator(),
       title: "Tiny",
