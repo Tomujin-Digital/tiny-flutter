@@ -156,9 +156,12 @@ class ApiHttpClient {
           handler.next(options);
         },
         onError: (DioError error, ErrorInterceptorHandler handler) {
+          print(error);
+          print('dio is here xoxoxo');
           if (error.response?.statusCode == 401 ||
               error.response?.statusCode == 403) {
             authCtrl.logOut();
+            authCtrl.checkToken();
           }
           return handler.next(error);
         },
@@ -169,7 +172,6 @@ class ApiHttpClient {
           print(response.data);
           if (response.data['error'] == 'UnauthorizedError') {
             // Refresh token.
-
             if (authLock != null && !(authLock!.isCompleted)) {
               await authLock!.future;
             } else {
