@@ -26,7 +26,11 @@ class WalletView extends MainView {
           ),
         ),
       ),
-      body: Column(
+      body:
+          // _walletController.isLoading.value
+          //     ? Image.asset('coin.gif')
+          //     :
+          Column(
         children: [
           WalletCardWidget(),
           C.vTitleSpacing,

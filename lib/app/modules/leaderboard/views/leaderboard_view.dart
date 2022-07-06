@@ -18,14 +18,11 @@ class LeaderboardView extends MainView {
       itemCount: 10,
       itemBuilder: (context, index) {
         /// first 3 items are the top 3 users
-        if (index < 3) {
-          return TopThreeAvatarBox(place: index + 1);
-        } else {
-          return Padding(
-            padding: C.padding168,
-            child: LeaderBoardItem(index: index + 1),
-          );
-        }
+
+        return Padding(
+          padding: C.padding168,
+          child: LeaderBoardItem(index: index + 1),
+        );
       },
     );
   }
