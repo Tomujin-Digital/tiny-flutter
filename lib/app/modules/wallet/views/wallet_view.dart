@@ -9,7 +9,7 @@ import '../widgets/widgets.dart';
 
 class WalletView extends MainView {
   WalletView({Key? key}) : super(key: key);
-  // final _walletController = Get.put<WalletController>(WalletController());
+  final _walletController = Get.put<WalletController>(WalletController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
