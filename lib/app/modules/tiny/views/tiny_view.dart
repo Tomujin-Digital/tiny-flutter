@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:pocket_tomyo/app/config/app_constants.dart';
 import 'package:pocket_tomyo/app/config/custom_colors.dart';
+import 'package:pocket_tomyo/app/modules/package/bindings/package_binding.dart';
 import 'package:pocket_tomyo/app/modules/package/views/package_view.dart';
 import 'package:pocket_tomyo/app/modules/tiny/views/battle_view.dart';
 import 'package:pocket_tomyo/app/modules/wallet/views/wallet_view.dart';
@@ -34,7 +35,7 @@ class TinyView extends GetView<TinyController> {
                 C.vTitleSpacing,
                 TouchableScale(
                   onPressed: () {
-                    Get.to(() => PackageView());
+                    Get.to(() => PackageView(), binding: PackageBinding());
                   },
                   child: Container(
                     width: Get.width * 0.4,
