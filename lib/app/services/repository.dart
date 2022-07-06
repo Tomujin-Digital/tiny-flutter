@@ -19,14 +19,11 @@ class Repository extends GetxService {
     token.value =
         (await Get.find<LocalStorageService>().read(LocalStorageKey.token)) ??
             '';
-    print('token.value');
-    print(token.value);
+
     super.onInit();
   }
 
   Future<UserModel> getMe() async {
-    print('token.value');
-    print(token.value);
     try {
       final response = await _ApiHttpClient.get('/user/me',
           options: Options(
@@ -44,8 +41,6 @@ class Repository extends GetxService {
   }
 
   Future<List<Transaction>> transactions() async {
-    print('token.value');
-    print(token.value);
     try {
       final response = await _ApiHttpClient.get('/wallet/transaction',
           options: Options(
