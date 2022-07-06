@@ -30,11 +30,17 @@ dependencies:
   pinput: 2.2.11
   flutter:
     sdk: flutter
+  
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.9.3
   flutter_lints: 2.0.1
   flutter_test:
     sdk: flutter
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/icon.png"
 
 flutter:
   assets:
