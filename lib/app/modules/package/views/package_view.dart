@@ -5,7 +5,6 @@ import 'package:pocket_tomyo/app/modules/battle/utilities/colors.dart';
 
 import '../controllers/package_controller.dart';
 
-List<String> Dummy = ["casual", "bruceLee", "blueTshirt"];
 List<String> Options = ["Cloth", "Accessories"];
 
 class PackageView extends GetView<PackageController> {
@@ -56,8 +55,8 @@ class PackageView extends GetView<PackageController> {
                       return Container(
                         padding: EdgeInsets.all(18),
                         transform: Matrix4.translationValues(-4, -42.0, 0.0),
-                        child: Image.asset(
-                            'assets/images/tiny/hat/${controller.hat.value}.png'),
+                        child: Image.network(
+                            "https://s3.ap-southeast-1.amazonaws.com/tinyapp.elf/hat/${controller.hat.value}.png"),
                       );
                     })
                   ],
@@ -97,54 +96,59 @@ class PackageView extends GetView<PackageController> {
                     crossAxisCount: 2,
                     crossAxisSpacing: 12,
                     mainAxisSpacing: 12,
-                    children: Dummy.map((e) => GestureDetector(
-                          onTap: () {
-                            controller.setCloth(e);
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                  color: controller.cloth.value == e
-                                      ? kPink
-                                      : Colors.grey.shade200,
-                                  width: 1),
-                            ),
-                            child: Stack(children: [
-                              Positioned(
-                                  top: 0,
-                                  left: 0,
-                                  right: 0,
-                                  child: Center(
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.only(
-                                            bottomRight: Radius.circular(10),
-                                            bottomLeft: Radius.circular(10)),
-                                        color: Color.fromRGBO(120, 81, 162, 1),
-                                      ),
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 12, vertical: 6),
-                                      child: Text(
-                                        "Health +2",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                  )),
-                              Image.network(
-                                  "https://s3.ap-southeast-1.amazonaws.com/tinyapp.elf/skin/$e.png"),
-                            ]),
-                          ),
-                        )).toList());
+                    children: controller.cloths
+                        .map((e) => GestureDetector(
+                              onTap: () {
+                                controller.setCloth(e);
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                      color: controller.cloth.value == e
+                                          ? kPink
+                                          : Colors.grey.shade200,
+                                      width: 1),
+                                ),
+                                child: Stack(children: [
+                                  Positioned(
+                                      top: 0,
+                                      left: 0,
+                                      right: 0,
+                                      child: Center(
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                                bottomRight:
+                                                    Radius.circular(10),
+                                                bottomLeft:
+                                                    Radius.circular(10)),
+                                            color:
+                                                Color.fromRGBO(120, 81, 162, 1),
+                                          ),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 12, vertical: 6),
+                                          child: Text(
+                                            "Health +2",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      )),
+                                  Image.network(
+                                      "https://s3.ap-southeast-1.amazonaws.com/tinyapp.elf/skin/$e.png"),
+                                ]),
+                              ),
+                            ))
+                        .toList());
               } else if (controller.active.value == "Accessories") {
                 return GridView.count(
                     shrinkWrap: true,
                     crossAxisCount: 2,
                     crossAxisSpacing: 12,
                     mainAxisSpacing: 12,
-                    children: ["1", "2", "3", "4"]
+                    children: controller.hats
                         .map((e) => GestureDetector(
                               onTap: () {
                                 controller.setHat(e);
@@ -185,10 +189,11 @@ class PackageView extends GetView<PackageController> {
                                         ),
                                       )),
                                   Container(
-                                      transform: Matrix4.translationValues(
-                                          0.0, 40.0, 0.0),
-                                      child: Image.asset(
-                                          'assets/images/tiny/hat/$e.png')),
+                                    transform: Matrix4.translationValues(
+                                        0.0, 40.0, 0.0),
+                                    child: Image.network(
+                                        "https://s3.ap-southeast-1.amazonaws.com/tinyapp.elf/hat/$e.png"),
+                                  )
                                 ]),
                               ),
                             ))
@@ -205,10 +210,6 @@ class PackageView extends GetView<PackageController> {
         width: 300,
         child: ElevatedButton(
           onPressed: () {},
-          child: Text(
-            "Save",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
           style: ButtonStyle(
               padding:
                   MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(10)),
@@ -216,6 +217,10 @@ class PackageView extends GetView<PackageController> {
                   RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
                       side: BorderSide(color: Colors.red)))),
+          child: Text(
+            "Save",
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
         ),
       ),
     );
