@@ -50,6 +50,7 @@ flutter:
     - assets/svgs/nav/
     - assets/svgs/profile/
     - assets/images/tiny/
+    - assets/images/tiny/hat/
     - assets/svgs/tiny/
 
     - assets/
