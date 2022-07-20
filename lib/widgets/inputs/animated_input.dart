@@ -23,7 +23,7 @@ class AnimatedInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _debouncer = Debouncer(milliseconds: hasDebouncer ? 500 : 0);
+    final debouncer = Debouncer(milliseconds: hasDebouncer ? 500 : 0);
     return AnimatedSize(
       duration: const Duration(milliseconds: 350),
       curve: Curves.easeInOutCubic,
@@ -41,7 +41,7 @@ class AnimatedInput extends StatelessWidget {
           ),
         ),
         onChanged: (value) {
-          _debouncer.run(() {
+          debouncer.run(() {
             if (function != null) {
               function!(value);
             }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:pocket_tomyo/app/modules/battle/utilities/space_widgets.dart';
+import '../../utilities/space_widgets.dart';
 import '../../../../../widgets/buttons/touchable_scale.dart';
 import '../../models/quiz.dart';
 import '../battle_controller.dart';
@@ -168,7 +168,7 @@ class _QuizPresenterState extends State<QuizPresenter>
     return ValueListenableBuilder<Quiz?>(
       valueListenable: battleController.quizCtrl.currentQuiz,
       builder: (context, quiz, _) {
-        if (quiz == null) return SizedBox();
+        if (quiz == null) return const SizedBox();
 
         return QuizCardSlider(
           controller: battleController.quizCtrl.transformationCtrl,
@@ -222,7 +222,7 @@ class _QuizCardState extends State<QuizCard>
   Widget build(BuildContext context) {
     return Container(
       width: 375.0,
-      margin: EdgeInsets.symmetric(horizontal: 16.0),
+      margin: const EdgeInsets.symmetric(horizontal: 16.0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(24.0),
@@ -245,7 +245,7 @@ class _QuizCardState extends State<QuizCard>
                 ),
                 Text(
                   '00:' + '${_remaining}'.padLeft(2, '0'),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xffED4756),
@@ -268,7 +268,7 @@ class _QuizCardState extends State<QuizCard>
             child: Text(
               widget.quiz.question,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -366,7 +366,7 @@ class QuizOption extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.0),
           color: isSelected
               ? (isCorrect ? Colors.greenAccent : Colors.redAccent)
-              : Color(0xffF2F2F2),
+              : const Color(0xffF2F2F2),
         ),
         alignment: Alignment.center,
         child: Row(
@@ -374,12 +374,13 @@ class QuizOption extends StatelessWidget {
           children: [
             if (text.icon.isNotEmpty)
               Padding(
-                padding: EdgeInsets.only(right: 8.0, top: 8.0, bottom: 8.0),
+                padding:
+                    const EdgeInsets.only(right: 8.0, top: 8.0, bottom: 8.0),
                 child: Image.network(text.icon),
               ),
             Text(
               text.value,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,

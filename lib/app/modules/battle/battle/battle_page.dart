@@ -35,7 +35,7 @@ class _BattlePageState extends State<BattlePage> {
   Widget buildPageBody() {
     return Stack(
       children: [
-        BattleBackgroundLayer(),
+        const BattleBackgroundLayer(),
         BattleDrawablesLayer(
           enemyController: _enemyController,
           playerController: _playerController,
@@ -45,13 +45,13 @@ class _BattlePageState extends State<BattlePage> {
             controller: _questionLayerController,
             onPressOption: (option) async {
               _questionLayerController.isVisible.value = false;
-              await Future.delayed(Duration(milliseconds: 180));
+              await Future.delayed(const Duration(milliseconds: 180));
 
               await Future.wait(
                 [
                   _playerController.attack(),
                   Future.delayed(
-                    Duration(milliseconds: 200),
+                    const Duration(milliseconds: 200),
                     () => _enemyController.getHit(),
                   ),
                 ],

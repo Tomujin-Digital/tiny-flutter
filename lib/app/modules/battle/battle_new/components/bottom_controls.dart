@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_tomyo/app/modules/battle/utilities/space_widgets.dart';
-import 'package:pocket_tomyo/widgets/buttons/touchable_scale.dart';
+import '../../utilities/space_widgets.dart';
+import '../../../../../widgets/buttons/touchable_scale.dart';
 import '../battle_controller.dart';
 import '../battle_controller_provider.dart';
 import 'boost_button.dart';
@@ -38,13 +38,13 @@ class _BottomControlPanelState extends State<BottomControlPanel>
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: EdgeInsets.only(left: 24.0),
+              padding: const EdgeInsets.only(left: 24.0),
               child: TouchableScale(
                 onPressed: () {
                   // battleController();
                   Navigator.of(context).pop();
                 },
-                child: Icon(
+                child: const Icon(
                   Icons.exit_to_app_rounded,
                   size: 32,
                   color: Colors.white,
@@ -63,7 +63,7 @@ class _BottomControlPanelState extends State<BottomControlPanel>
                       type: 0,
                       boostCtrl: battleController.boost1,
                     ),
-                    Text(
+                    const Text(
                       "Heal",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -79,7 +79,7 @@ class _BottomControlPanelState extends State<BottomControlPanel>
                       type: 1,
                       boostCtrl: battleController.boost2,
                     ),
-                    Text(
+                    const Text(
                       "+5 sec",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,

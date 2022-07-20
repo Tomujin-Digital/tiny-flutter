@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/services/local_storage.dart';
-import 'package:pocket_tomyo/app/utils/auth_api_http_client.dart';
-import 'package:pocket_tomyo/data/models/my_model.dart';
-import 'package:pocket_tomyo/data/models/transaction_model.dart';
+import 'local_storage.dart';
+import '../../data/models/my_model.dart';
+import '../../data/models/transaction_model.dart';
 
 import '../utils/api_http_client.dart';
 

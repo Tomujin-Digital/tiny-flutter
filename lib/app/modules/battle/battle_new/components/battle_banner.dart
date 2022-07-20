@@ -13,7 +13,7 @@ class BattleBanner extends StatefulWidget {
 class _BattleBannerState extends State<BattleBanner> {
   @override
   Widget build(BuildContext context) {
-    final double bannerHeight = 144.0;
+    const double bannerHeight = 144.0;
 
     return SizedBox(
       height: bannerHeight,
@@ -29,7 +29,7 @@ class _BattleBannerState extends State<BattleBanner> {
                   child: SizedBox(
                     height: 72.0,
                     child: DefaultTextStyle.merge(
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                       ),
                       child: Row(
@@ -50,7 +50,7 @@ class _BattleBannerState extends State<BattleBanner> {
                                     );
                                   },
                                   child: Container(
-                                    decoration: ShapeDecoration(
+                                    decoration: const ShapeDecoration(
                                       color: Color(0xffEF518B),
                                       shape: SmoothRectangleBorder(
                                         borderRadius:
@@ -75,7 +75,7 @@ class _BattleBannerState extends State<BattleBanner> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Text(
+                                          const Text(
                                             "Daimaa",
                                             textAlign: TextAlign.left,
                                             style: TextStyle(
@@ -83,7 +83,7 @@ class _BattleBannerState extends State<BattleBanner> {
                                               fontWeight: FontWeight.w700,
                                             ),
                                           ),
-                                          Text(
+                                          const Text(
                                             "Level 2",
                                             textAlign: TextAlign.left,
                                             style: TextStyle(
@@ -115,7 +115,7 @@ class _BattleBannerState extends State<BattleBanner> {
                                     );
                                   },
                                   child: Container(
-                                    decoration: ShapeDecoration(
+                                    decoration: const ShapeDecoration(
                                       color: Color(0xffEF518B),
                                       shape: SmoothRectangleBorder(
                                         borderRadius:
@@ -140,7 +140,7 @@ class _BattleBannerState extends State<BattleBanner> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Text(
+                                          const Text(
                                             "Skeleton Boss",
                                             textAlign: TextAlign.right,
                                             style: TextStyle(
@@ -148,7 +148,7 @@ class _BattleBannerState extends State<BattleBanner> {
                                               fontWeight: FontWeight.w700,
                                             ),
                                           ),
-                                          Text(
+                                          const Text(
                                             "Level 2",
                                             textAlign: TextAlign.right,
                                             style: TextStyle(

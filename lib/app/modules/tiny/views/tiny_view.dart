@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/config/app_constants.dart';
-import 'package:pocket_tomyo/app/config/custom_colors.dart';
-import 'package:pocket_tomyo/app/modules/package/views/package_view.dart';
-import 'package:pocket_tomyo/app/modules/tiny/views/battle_view.dart';
-import 'package:pocket_tomyo/app/modules/wallet/views/wallet_view.dart';
-import 'package:pocket_tomyo/widgets/buttons/image_buttons.dart';
-import 'package:pocket_tomyo/widgets/buttons/touchable_scale.dart';
 
+import '../../../../widgets/buttons/image_buttons.dart';
+import '../../../../widgets/buttons/touchable_scale.dart';
 import '../../../../widgets/profile_card.dart';
+import '../../../config/app_constants.dart';
+import '../../../config/custom_colors.dart';
 import '../../wallet/bindings/wallet_binding.dart';
+import '../../wallet/views/wallet_view.dart';
 import '../controllers/tiny_controller.dart';
+import 'battle_view.dart';
 
 class TinyView extends GetView<TinyController> {
   const TinyView({Key? key}) : super(key: key);
@@ -34,7 +33,7 @@ class TinyView extends GetView<TinyController> {
                 C.vTitleSpacing,
                 TouchableScale(
                   onPressed: () {
-                    Get.to(() => PackageView());
+                    // Get.to(() => PackageView());
                   },
                   child: Container(
                     width: Get.width * 0.4,

@@ -24,7 +24,7 @@ class Quiz {
           ?.map(
             (e) => QuizAnswer.fromJson(e as Map<String, dynamic>),
           )
-          ?.toList(),
+          .toList(),
     );
   }
 }

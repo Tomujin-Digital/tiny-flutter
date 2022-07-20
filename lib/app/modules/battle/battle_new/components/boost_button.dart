@@ -1,9 +1,8 @@
 import 'dart:math' as math;
 
-import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:pocket_tomyo/widgets/buttons/touchable_scale.dart';
+import '../../../../../widgets/buttons/touchable_scale.dart';
 
 import '../../core/components/animations/i_zoom.dart';
 import '../battle_controller.dart';
@@ -56,7 +55,7 @@ class _BoostButtonState extends State<BoostButton>
       child: AnimatedContainer(
         height: 64.0,
         width: 64.0,
-        duration: Duration(milliseconds: 850),
+        duration: const Duration(milliseconds: 850),
         curve: Curves.easeInOutCubicEmphasized,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
@@ -71,7 +70,7 @@ class _BoostButtonState extends State<BoostButton>
               color: Colors.yellow
                   .withOpacity(widget.boostCtrl.isAvailable ? 0.2 : 0.0),
               blurRadius: 8,
-              offset: Offset(0, 8),
+              offset: const Offset(0, 8),
             ),
           ],
         ),
@@ -94,12 +93,12 @@ class _BoostButtonState extends State<BoostButton>
                       '${widget.boostCtrl.cooldownRemainingInSeconds}'),
                   child: Text(
                     '${widget.boostCtrl.cooldownRemainingInSeconds}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 32.0,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       shadows: [
-                        BoxShadow(color: Colors.black, blurRadius: 2.0),
+                        const BoxShadow(color: Colors.black, blurRadius: 2.0),
                       ],
                     ),
                   ),

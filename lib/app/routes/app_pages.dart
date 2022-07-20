@@ -10,8 +10,6 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/notifcation/bindings/notifcation_binding.dart';
 import '../modules/notifcation/views/notifcation_view.dart';
-import '../modules/package/bindings/package_binding.dart';
-import '../modules/package/views/package_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/programs/bindings/programs_binding.dart';
@@ -70,11 +68,6 @@ class AppPages {
       name: _Paths.TINY,
       page: () => const TinyView(),
       binding: TinyBinding(),
-    ),
-    GetPage(
-      name: _Paths.PACKAGE,
-      page: () => const PackageView(),
-      binding: PackageBinding(),
     ),
     GetPage(
       name: _Paths.WALLET,

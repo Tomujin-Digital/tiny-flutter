@@ -1,9 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/services/local_storage.dart';
-import 'package:pocket_tomyo/app/utils/api_http_client.dart';
-
+import '../../../services/local_storage.dart';
 import '../../../services/auth_repository.dart';
 import '../../../utils/auth_api_http_client.dart';
 
@@ -63,11 +61,11 @@ class AuthController extends GetxController {
   }
 
   refreshTokenFromApi() async {
-    print('refreshing token');
     final refreshToken = await storage.read(LocalStorageKey.refrshToken);
 
     try {
       final response = await _repository.refreshToken(refreshToken ?? "");
+      print(response.data);
 
       await storage.write(LocalStorageKey.token, response.data['accessToken']);
       await storage.write(
@@ -79,15 +77,5 @@ class AuthController extends GetxController {
       Get.snackbar('Error', message.toString(),
           backgroundColor: Colors.red, colorText: Colors.white);
     }
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
   }
 }

@@ -3,9 +3,9 @@ import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/config/app_constants.dart';
-import 'package:pocket_tomyo/app/modules/0_initial/controllers/auth_controller.dart';
-import 'package:pocket_tomyo/widgets/rec_image_widget.dart';
+import '../app/config/app_constants.dart';
+import '../app/modules/0_initial/controllers/auth_controller.dart';
+import 'rec_image_widget.dart';
 
 class PostWidget extends StatelessWidget {
   const PostWidget({Key? key}) : super(key: key);
@@ -152,8 +152,8 @@ class _PostActions extends StatelessWidget {
               ),
             ],
           ),
-          const Text(
-              'Амжилт, зорилго, мөрөөдөлд нь хүргэх хамгийн баталгаатай арга бол бага багаар урагшаа алхалах юм шүү. '),
+          const Text('''
+Амжилт, зорилго, мөрөөдөлд нь хүргэх хамгийн баталгаатай арга бол бага багаар урагшаа алхалах юм шүү. '''),
           C.vElementSpacing,
         ],
       ),

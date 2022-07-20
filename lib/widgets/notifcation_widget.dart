@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_tomyo/app/config/app_constants.dart';
-import 'package:pocket_tomyo/app/types/notifcation_types.dart';
-import 'package:pocket_tomyo/widgets/rec_image_widget.dart';
+import '../app/config/app_constants.dart';
+import '../app/types/notifcation_types.dart';
+import 'rec_image_widget.dart';
 
 class NotifcationWidget extends StatelessWidget {
   // final notifcationController = Get.put(NotifcationController());

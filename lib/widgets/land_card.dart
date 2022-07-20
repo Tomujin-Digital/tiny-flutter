@@ -24,7 +24,6 @@ class LandCard extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.all(
             color: C.colorGrey2,
-            width: 1.0,
           ),
           image: const DecorationImage(
             image: CachedNetworkImageProvider(
@@ -77,14 +76,14 @@ class LandCard extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Human International school',
+                                const Text('Human International school',
                                     style: AppTextStyles.greySubTitle),
                                 C.vElementSpacing,
                                 // implement Rating widget
                                 Row(
                                   children: [
                                     Row(
-                                      children: [
+                                      children: const [
                                         Icon(
                                           Icons.star,
                                           size: 14.0,
@@ -117,7 +116,7 @@ class LandCard extends StatelessWidget {
                                       ],
                                     ),
                                     C.hElementSpacing,
-                                    Text(
+                                    const Text(
                                       '4.5 | ',
                                       style: AppTextStyles.greySubTitle,
                                     ),

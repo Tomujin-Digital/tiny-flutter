@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pocket_tomyo/app/config/custom_colors.dart';
-import 'package:pocket_tomyo/app/modules/battle/utilities/colors.dart';
+import 'custom_colors.dart';
+import '../modules/battle/utilities/colors.dart';
 
 class AppTheme {
   static ThemeData get lightTheme => ThemeData.light().copyWith(
@@ -10,7 +10,7 @@ class AppTheme {
           elevation: 0.0,
         ),
 
-        colorScheme: ColorScheme.light().copyWith(
+        colorScheme: const ColorScheme.light().copyWith(
           primary: kPink,
           secondary: kPink,
           onPrimary: Colors.white,
@@ -70,12 +70,6 @@ class AppTheme {
             backgroundColor: MaterialStateProperty.all(Colors.pink),
           ),
         ),
-        // textTheme: const TextTheme().copyWith(
-        //   bodyText1: const TextStyle(
-        //       fontSize: 16, fontWeight: FontWeight.w500, color: Colors.grey),
-        //   headline6: const TextStyle(
-        //       fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
-        // ),
         navigationBarTheme: NavigationBarThemeData(
           indicatorColor: Colors.transparent,
           backgroundColor: Colors.black,

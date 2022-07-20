@@ -16,7 +16,8 @@ class MainView extends StatelessWidget {
     return const SizedBox();
   }
 
-  /// Ашиглагдаж буй жагсаалт [List] - үүд хоосон [isEmpty] байх үед харуулах [Widget].
+  /// Ашиглагдаж буй жагсаалт [List] - үүд хоосон [isEmpty] байх
+  /// үед харуулах [Widget]
   static Widget empty(ListType type) {
     switch (type) {
       case ListType.programs:

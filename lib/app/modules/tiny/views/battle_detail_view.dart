@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
+import 'package:pocket_tomyo/app/modules/battle/battle_new/battle_screen.dart';
 import 'package:pocket_tomyo/app/modules/tiny/widgets/custom_sliver_app_bar.dart';
 import 'package:pocket_tomyo/widgets/buttons/touchable_scale.dart';
 
 import '../../../config/app_constants.dart';
 import '../../../config/custom_colors.dart';
+import '../../battle/battle/battle_loading_page.dart';
+import '../../battle/directory_page.dart';
 
 class BattleDetailView extends GetView {
   const BattleDetailView({Key? key}) : super(key: key);
@@ -278,7 +281,9 @@ class BattleDetailView extends GetView {
                         ],
                       ),
                     ),
-                    onPressed: () {}),
+                    onPressed: () {
+                      Get.to(() => VersusScreen());
+                    }),
               ],
             ),
           ),

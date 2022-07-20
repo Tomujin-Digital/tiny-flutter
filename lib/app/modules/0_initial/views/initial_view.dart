@@ -1,15 +1,12 @@
-import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/config/custom_colors.dart';
-import 'package:pocket_tomyo/app/modules/0_initial/widgets/nav_tiny.dart';
+import '../widgets/nav_tiny.dart';
 
-import 'package:pocket_tomyo/app/types/tab_types.dart';
-import 'package:pocket_tomyo/library/main_view.dart';
-import 'package:pocket_tomyo/widgets/buttons/touchable_scale.dart';
+import '../../../types/tab_types.dart';
+import '../../../../library/main_view.dart';
+import '../../../../widgets/buttons/touchable_scale.dart';
 
-import '../../login/controllers/login_controller.dart';
 import '../../login/views/login_view.dart';
 import '../controllers/auth_controller.dart';
 import '../controllers/initial_controller.dart';

@@ -46,12 +46,12 @@ class LoginView extends MainView {
                 const Spacer(
                   flex: 2,
                 ),
-                TinyButton(
-                  onPressed: () => Get.to(
-                    () => BattleDirectoryPage(),
-                  ),
-                  child: const Text("Battle"),
-                ),
+                // TinyButton(
+                //   onPressed: () => Get.to(
+                //     () => BattleDirectoryPage(),
+                //   ),
+                //   child: const Text("Battle"),
+                // ),
                 _buildLoginForm(),
                 const Spacer(),
               ],
@@ -77,8 +77,8 @@ class LoginView extends MainView {
               }
               return null;
             },
-            errorMessage: 'Нэвтрэх нэрээ оруулна уу',
-            label: 'Username or Email',
+            errorMessage: 'Enter phone number',
+            label: 'Phone number',
           ),
           C.vTitleSpacing,
           Obx(

@@ -25,7 +25,7 @@ class _AnnouncerState extends State<Announcer> {
         if (state == AnnouncerState.fight) {
           return TweenAnimationBuilder<double>(
             key: ValueKey(state),
-            duration: Duration(milliseconds: 350),
+            duration: const Duration(milliseconds: 350),
             curve: Curves.easeInOut,
             tween: Tween<double>(begin: 1.5, end: 1.0),
             builder: (context, anim, child) {
@@ -34,7 +34,7 @@ class _AnnouncerState extends State<Announcer> {
                 child: child,
               );
             },
-            child: Text(
+            child: const Text(
               "FIGHT!",
               style: TextStyle(
                 fontSize: 72,
@@ -58,7 +58,7 @@ class _AnnouncerState extends State<Announcer> {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "START",
               style: TextStyle(
                 fontSize: 32,
@@ -68,7 +68,7 @@ class _AnnouncerState extends State<Announcer> {
             ),
             TweenAnimationBuilder<double>(
               key: ValueKey(state),
-              duration: Duration(milliseconds: 350),
+              duration: const Duration(milliseconds: 350),
               curve: Curves.easeInOut,
               tween: Tween<double>(begin: 1.5, end: 1.0),
               builder: (context, anim, child) {
@@ -79,7 +79,7 @@ class _AnnouncerState extends State<Announcer> {
               },
               child: Text(
                 "$index",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 72,
                   color: Colors.white,
                   fontWeight: FontWeight.w900,

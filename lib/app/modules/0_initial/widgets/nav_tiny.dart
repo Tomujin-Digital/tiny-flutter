@@ -1,6 +1,7 @@
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
-import 'package:pocket_tomyo/app/config/custom_colors.dart';
+
+import '../../../config/custom_colors.dart';
 
 class NavBarTinyBorder extends StatelessWidget {
   const NavBarTinyBorder({Key? key, this.child}) : super(key: key);
@@ -11,29 +12,6 @@ class NavBarTinyBorder extends StatelessWidget {
       painter: NavBarTinyBorderPainter(),
       child: Center(
         child: child,
-      ),
-    );
-    return Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Container(
-        padding: const EdgeInsets.all(2.0),
-        decoration: ShapeDecoration(
-          gradient: const LinearGradient(colors: [primary, secondary]),
-          shape: SmoothRectangleBorder(
-            borderRadius: SmoothBorderRadius(
-              cornerRadius: 10,
-              cornerSmoothing: 0.7,
-            ),
-          ),
-        ),
-        child: Container(
-          // margin: EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-          child: child,
-        ),
       ),
     );
   }
@@ -62,7 +40,7 @@ class NavBarTinyBorderPainter extends CustomPainter {
         width: width,
         height: height,
       ),
-      Radius.circular(12),
+      const Radius.circular(12),
     );
 
     // Draw border
@@ -71,19 +49,9 @@ class NavBarTinyBorderPainter extends CustomPainter {
       Paint()
         ..style = PaintingStyle.stroke
         ..strokeWidth = 2
-        ..shader = LinearGradient(colors: [primary, secondary])
+        ..shader = const LinearGradient(colors: [primary, secondary])
             .createShader(rrect.outerRect),
     );
-
-    //
-    // canvas.drawRRect(
-    //   rrect,
-    //   Paint()
-    //     ..style = PaintingStyle.stroke
-    //     ..strokeWidth = 2
-    //     ..shader = LinearGradient(colors: [primary, secondary])
-    //         .createShader(rrect.outerRect),
-    // );
   }
 
   @override

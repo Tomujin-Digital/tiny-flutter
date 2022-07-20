@@ -73,7 +73,7 @@ class _EnemyLayer extends StatelessWidget {
                   child: Container(
                     height: 8.0,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 27, 11, 50),
+                      color: const Color.fromARGB(255, 27, 11, 50),
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                     clipBehavior: Clip.antiAlias,
@@ -85,7 +85,7 @@ class _EnemyLayer extends StatelessWidget {
                         return TweenAnimationBuilder<double>(
                           tween:
                               Tween<double>(begin: hpPercent, end: hpPercent),
-                          duration: Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOutCubicEmphasized,
                           builder: (ctx, hpAnim, _) => FractionallySizedBox(
                             widthFactor: hpAnim,
@@ -107,7 +107,7 @@ class _EnemyLayer extends StatelessWidget {
                       begin: isAttacked ? 0.8 : 0.0,
                       end: isAttacked ? 0.8 : 0.0,
                     ),
-                    duration: Duration(milliseconds: 200),
+                    duration: const Duration(milliseconds: 200),
                     builder: (context, redOpacity, _) {
                       return ColorFiltered(
                         colorFilter: ColorFilter.mode(
@@ -207,7 +207,7 @@ class _PlayerLayer extends StatelessWidget {
                   child: Container(
                     height: 8.0,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 27, 11, 50),
+                      color: const Color.fromARGB(255, 27, 11, 50),
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                     clipBehavior: Clip.antiAlias,
@@ -219,7 +219,7 @@ class _PlayerLayer extends StatelessWidget {
                         return TweenAnimationBuilder<double>(
                           tween:
                               Tween<double>(begin: hpPercent, end: hpPercent),
-                          duration: Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOutCubicEmphasized,
                           builder: (ctx, hpAnim, _) => FractionallySizedBox(
                             widthFactor: hpAnim,
@@ -241,7 +241,7 @@ class _PlayerLayer extends StatelessWidget {
                       begin: isAttacked ? 0.6 : 0.0,
                       end: isAttacked ? 0.6 : 0.0,
                     ),
-                    duration: Duration(milliseconds: 200),
+                    duration: const Duration(milliseconds: 200),
                     builder: (context, redOpacity, _) {
                       return ColorFiltered(
                         colorFilter: ColorFilter.mode(

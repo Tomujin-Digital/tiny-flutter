@@ -31,6 +31,7 @@ class TransactionCard extends StatelessWidget {
               color: primary,
               borderRadius: BorderRadius.circular(14.0),
             ),
+            child: Icon(Icons.attach_money),
           ),
           SizedBox(width: 16.0),
           Expanded(
@@ -42,14 +43,14 @@ class TransactionCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Game win',
+                      transaction.transactionType,
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      '10/10/2020',
+                      transaction.createdAt.toIso8601String(),
                       style: TextStyle(
                         fontSize: 14.0,
                         color: grey,
@@ -58,9 +59,11 @@ class TransactionCard extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  '+100',
+                  '+' + transaction.amount.toString(),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
+                    color: green,
+                    fontSize: 16.0,
                   ),
                 ),
               ],
