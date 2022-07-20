@@ -46,14 +46,14 @@ class PackageView extends GetView<PackageController> {
                     ),
                     Obx(() {
                       return Padding(
-                        padding: EdgeInsets.all(20),
+                        padding: const EdgeInsets.all(20),
                         child: Image.network(
                             "https://s3.ap-southeast-1.amazonaws.com/tinyapp.elf/skin/${controller.cloth.value}.png"),
                       );
                     }),
                     Obx(() {
                       return Container(
-                        padding: EdgeInsets.all(18),
+                        padding: const EdgeInsets.all(18),
                         transform: Matrix4.translationValues(-4, -42.0, 0.0),
                         child: Image.network(
                             "https://s3.ap-southeast-1.amazonaws.com/tinyapp.elf/hat/${controller.hat.value}.png"),
@@ -64,7 +64,7 @@ class PackageView extends GetView<PackageController> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Row(
                   children: Options.map(
                 (e) => GestureDetector(
@@ -73,9 +73,9 @@ class PackageView extends GetView<PackageController> {
                   },
                   child: Obx(() {
                     return Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        margin: EdgeInsets.only(right: 6),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        margin: const EdgeInsets.only(right: 6),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
@@ -117,18 +117,20 @@ class PackageView extends GetView<PackageController> {
                                       right: 0,
                                       child: Center(
                                         child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.only(
-                                                bottomRight:
-                                                    Radius.circular(10),
-                                                bottomLeft:
-                                                    Radius.circular(10)),
-                                            color:
-                                                Color.fromRGBO(120, 81, 162, 1),
+                                          decoration: const BoxDecoration(
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                                    bottomRight:
+                                                        const Radius.circular(
+                                                            10),
+                                                    bottomLeft:
+                                                        Radius.circular(10)),
+                                            color: const Color.fromRGBO(
+                                                120, 81, 162, 1),
                                           ),
-                                          padding: EdgeInsets.symmetric(
+                                          padding: const EdgeInsets.symmetric(
                                               horizontal: 12, vertical: 6),
-                                          child: Text(
+                                          child: const Text(
                                             "Health +2",
                                             style: TextStyle(
                                                 color: Colors.white,
@@ -169,18 +171,19 @@ class PackageView extends GetView<PackageController> {
                                       right: 0,
                                       child: Center(
                                         child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.only(
+                                          decoration: const BoxDecoration(
+                                            borderRadius: const BorderRadius
+                                                    .only(
                                                 bottomRight:
-                                                    Radius.circular(10),
+                                                    const Radius.circular(10),
                                                 bottomLeft:
-                                                    Radius.circular(10)),
-                                            color:
-                                                Color.fromRGBO(120, 81, 162, 1),
+                                                    const Radius.circular(10)),
+                                            color: const Color.fromRGBO(
+                                                120, 81, 162, 1),
                                           ),
-                                          padding: EdgeInsets.symmetric(
+                                          padding: const EdgeInsets.symmetric(
                                               horizontal: 12, vertical: 6),
-                                          child: Text(
+                                          child: const Text(
                                             "Health +2",
                                             style: TextStyle(
                                                 color: Colors.white,
@@ -211,15 +214,15 @@ class PackageView extends GetView<PackageController> {
         child: ElevatedButton(
           onPressed: () {},
           style: ButtonStyle(
-              padding:
-                  MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(10)),
+              padding: MaterialStateProperty.all<EdgeInsets>(
+                  const EdgeInsets.all(10)),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
-                      side: BorderSide(color: Colors.red)))),
-          child: Text(
+                      side: const BorderSide(color: Colors.red)))),
+          child: const Text(
             "Save",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
         ),
       ),

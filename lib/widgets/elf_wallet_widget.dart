@@ -15,7 +15,6 @@ class ElfWalletWidget extends StatelessWidget {
           color: const Color.fromRGBO(255, 255, 255, 1),
           border: Border.all(
             color: const Color.fromRGBO(242, 242, 242, 1),
-            width: 1,
           ),
         ),
       ),
