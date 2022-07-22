@@ -52,12 +52,12 @@ class EnemyController {
     dmg();
 
     Future.delayed(
-      Duration(milliseconds: 700),
+      const Duration(milliseconds: 700),
       () => idle(),
     );
 
     isAttackedNotifier.value = true;
-    await Future.delayed(Duration(milliseconds: 500));
+    await Future.delayed(const Duration(milliseconds: 500));
 
     isAttackedNotifier.value = false;
     hpNotifier.value = math.max(0, hpNotifier.value - 20);
@@ -69,7 +69,7 @@ class EnemyController {
   Future<void> attack() async {
     atk();
     alignmentNotifier.value = Alignment.bottomCenter;
-    translationNotifier.value = Offset(90, 90);
+    translationNotifier.value = const Offset(90, 90);
 
     // Future.delayed(
     //   Duration(milliseconds: 400),

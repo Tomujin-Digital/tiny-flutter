@@ -30,16 +30,14 @@ class PlayerController {
   }
 
   void dmg() {
-    spineCtrl.notifier.value = SpineAnimationPayload('rec_dmg', loop: false);
+    spineCtrl.notifier.value = SpineAnimationPayload('rec_dmg');
   }
 
   void atk() {
     if (math.Random().nextBool()) {
-      spineCtrl.notifier.value =
-          SpineAnimationPayload('weapon_attack', loop: false);
+      spineCtrl.notifier.value = SpineAnimationPayload('weapon_attack');
     } else {
-      spineCtrl.notifier.value =
-          SpineAnimationPayload('bare_hand_attack', loop: false);
+      spineCtrl.notifier.value = SpineAnimationPayload('bare_hand_attack');
     }
   }
 

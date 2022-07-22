@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/config/app_constants.dart';
-import 'package:pocket_tomyo/app/config/custom_colors.dart';
-import 'package:pocket_tomyo/library/main_view.dart';
-import 'package:pocket_tomyo/widgets/buttons/filled_button.dart';
-import 'package:pocket_tomyo/widgets/inputs/animated_input.dart';
+import '../../../config/app_constants.dart';
+import '../../../config/custom_colors.dart';
+import '../../../../library/main_view.dart';
+import '../../../../widgets/buttons/filled_button.dart';
+import '../../../../widgets/inputs/animated_input.dart';
 
-import '../../battle/directory_page.dart';
 import '../controllers/login_controller.dart';
 import 'register_view.dart';
 

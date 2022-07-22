@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/config/app_constants.dart';
-import 'package:pocket_tomyo/library/main_view.dart';
+import '../../../config/app_constants.dart';
+import '../../../../library/main_view.dart';
 
 import '../controllers/wallet_controller.dart';
 import '../widgets/widgets.dart';

@@ -1,7 +1,7 @@
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
-import 'package:pocket_tomyo/app/modules/battle/utilities/colors.dart';
-import 'package:pocket_tomyo/widgets/buttons/touchable_scale.dart';
+import '../../../utilities/colors.dart';
+import '../../../../../../widgets/buttons/touchable_scale.dart';
 
 class FilledButton extends StatelessWidget {
   const FilledButton({
@@ -29,10 +29,9 @@ class FilledButton extends StatelessWidget {
           ),
         ),
         child: Align(
-          alignment: Alignment.center,
           widthFactor: 1.0,
           child: DefaultTextStyle.merge(
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 16.0,
               fontWeight: FontWeight.bold,

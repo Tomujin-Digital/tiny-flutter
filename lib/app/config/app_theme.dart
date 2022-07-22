@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'custom_colors.dart';
 import '../modules/battle/utilities/colors.dart';
 
@@ -27,8 +26,8 @@ class AppTheme {
               ),
             )
             .apply(
-              fontFamily: GoogleFonts.poppins().fontFamily,
-            ),
+                // fontFamily: GoogleFonts.poppins().fontFamily,
+                ),
         progressIndicatorTheme: const ProgressIndicatorThemeData(
           linearMinHeight: 16.0,
           color: green,

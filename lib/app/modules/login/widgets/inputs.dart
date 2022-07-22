@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/config/app_constants.dart';
-import 'package:pocket_tomyo/app/modules/0_initial/controllers/auth_controller.dart';
-import 'package:pocket_tomyo/app/modules/login/controllers/register_controller.dart';
-import 'package:pocket_tomyo/app/modules/login/views/widgets/register_content_widget.dart';
-import 'package:pocket_tomyo/app/services/auth_repository.dart';
+import '../../../config/app_constants.dart';
+import '../../0_initial/controllers/auth_controller.dart';
+import '../controllers/register_controller.dart';
+
+import '../../../services/auth_repository.dart';
 
 import '../../../../../widgets/inputs/animated_input.dart';
 

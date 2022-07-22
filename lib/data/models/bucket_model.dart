@@ -15,7 +15,7 @@ class BucketModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['count'] = count;
     if (files != null) {
       data['files'] = files!.map((v) => v.toJson()).toList();
@@ -38,7 +38,7 @@ class Files {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['Key'] = key;
     data['LastModified'] = lastModified;
     data['ETag'] = eTag;

@@ -397,7 +397,7 @@ class BattleController {
   void attack() {
     playerController.attack();
     Future.delayed(
-      Duration(milliseconds: 200),
+      const Duration(milliseconds: 200),
       () => enemyController.getHit(),
     );
   }
@@ -405,7 +405,7 @@ class BattleController {
   void attacked() {
     enemyController.attack();
     Future.delayed(
-      Duration(milliseconds: 200),
+      const Duration(milliseconds: 200),
       () => playerController.getHit(),
     );
   }

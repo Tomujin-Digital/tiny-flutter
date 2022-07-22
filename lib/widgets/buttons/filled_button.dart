@@ -1,6 +1,6 @@
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
-import 'package:pocket_tomyo/app/config/custom_colors.dart';
+import '../../app/config/custom_colors.dart';
 
 import 'touchable_scale.dart';
 
@@ -33,19 +33,19 @@ class TinyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color color = disabled ? Color(0xffF3F3F7) : this.color;
+    Color color = disabled ? const Color(0xffF3F3F7) : this.color;
 
     final brightness = color.computeLuminance();
     final isDark = brightness < 0.6;
     Color contentColor =
         this.contentColor ?? (isDark ? Colors.white : Colors.black);
 
-    if (disabled) contentColor = Color(0xff9691B5);
+    if (disabled) contentColor = const Color(0xff9691B5);
 
     Widget body = AnimatedContainer(
       height: height,
       width: width,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       decoration: ShapeDecoration(
         color: color,
         shape: SmoothRectangleBorder(
@@ -59,7 +59,7 @@ class TinyButton extends StatelessWidget {
             BoxShadow(
               color: color.withOpacity(disabled ? 0.0 : 0.2),
               blurRadius: 4.0,
-              offset: Offset(0, 4.0),
+              offset: const Offset(0, 4.0),
             ),
         ],
       ),
@@ -79,7 +79,7 @@ class TinyButton extends StatelessWidget {
       ),
     );
 
-    if (!disabled) body = TouchableScale(child: body, onPressed: onPressed);
+    if (!disabled) body = TouchableScale(onPressed: onPressed, child: body);
 
     return Material(
       color: Colors.transparent,

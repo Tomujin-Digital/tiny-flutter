@@ -98,7 +98,7 @@ class _BoostButtonState extends State<BoostButton>
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       shadows: [
-                        const BoxShadow(color: Colors.black, blurRadius: 2.0),
+                        BoxShadow(blurRadius: 2.0),
                       ],
                     ),
                   ),

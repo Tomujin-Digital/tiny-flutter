@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../config/custom_colors.dart';
-import '../../../../utils/shake_widget.dart';
+import '../../../config/custom_colors.dart';
+import '../../../utils/shake_widget.dart';
 
 class RegisterReward extends StatefulWidget {
   const RegisterReward({Key? key}) : super(key: key);

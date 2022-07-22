@@ -16,7 +16,7 @@ class _SlushyAnimationState extends State<SlushyAnimation> {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<double>(
-      key: ValueKey("2"),
+      key: const ValueKey("2"),
       tween: Tween<double>(begin: 0.0, end: 1.0),
       duration: const Duration(milliseconds: 1200),
       curve: Curves.easeInOutCubicEmphasized,

@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pocket_tomyo/app/modules/battle/battle/battle_loading_page.dart';
-import 'package:pocket_tomyo/app/modules/battle/core/components/touchables/flat_button.dart';
+
+import 'core/components/touchables/flat_button.dart';
 
 class BattleDirectoryPage extends StatefulWidget {
-  BattleDirectoryPage({Key? key}) : super(key: key);
+  const BattleDirectoryPage({Key? key}) : super(key: key);
 
   @override
   State<BattleDirectoryPage> createState() => _BattleDirectoryPageState();
@@ -23,20 +23,19 @@ class _BattleDirectoryPageState extends State<BattleDirectoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Battle Directory")),
+      appBar: AppBar(title: const Text("Battle Directory")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: "Room code",
               ),
             ),
             FilledButton(
               onPressed: createRoom,
-              child: Text("Play"),
+              child: const Text("Play"),
             ),
           ],
         ),
@@ -46,7 +45,7 @@ class _BattleDirectoryPageState extends State<BattleDirectoryPage> {
 }
 
 class FirestoreDemo extends StatefulWidget {
-  FirestoreDemo({Key? key}) : super(key: key);
+  const FirestoreDemo({Key? key}) : super(key: key);
 
   @override
   State<FirestoreDemo> createState() => _FirestoreDemoState();
@@ -57,7 +56,6 @@ class _FirestoreDemoState extends State<FirestoreDemo> {
       FirebaseFirestore.instance.collection('battle').snapshots();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -73,7 +71,7 @@ class _FirestoreDemoState extends State<FirestoreDemo> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Text("Loading");
+          return const Text("Loading");
         }
 
         return ListView(

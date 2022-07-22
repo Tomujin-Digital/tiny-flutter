@@ -46,7 +46,7 @@ class _SpinePreviewScreenState extends State<SpinePreviewScreen> {
     }
 
     return Scaffold(
-      appBar: AppBar(title: Text('Preview')),
+      appBar: AppBar(title: const Text('Preview')),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -73,7 +73,7 @@ class _SpinePreviewScreenState extends State<SpinePreviewScreen> {
             ),
           ),
           skeleton == null
-              ? Center(
+              ? const Center(
                   child: CircularProgressIndicator(),
                 )
               : Center(

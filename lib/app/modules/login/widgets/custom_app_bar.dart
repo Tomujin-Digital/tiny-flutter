@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../../config/app_constants.dart';
+import '../../../config/app_constants.dart';
 
 typedef IntCallback = void Function(int val);
 

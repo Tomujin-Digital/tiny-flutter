@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
 
-import '../../battle/battle_new/components/tree.dart';
-import '../../battle/core/components/animations/idle_bounce.dart';
-import '../../battle/core/components/animations/slushy.dart';
-import '../controllers/journey_controller.dart';
 import '../journey.dart';
 
 class JourneyView extends GetView<JourneyController> {

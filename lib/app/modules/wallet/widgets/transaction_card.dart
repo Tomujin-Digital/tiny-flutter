@@ -31,9 +31,9 @@ class TransactionCard extends StatelessWidget {
               color: primary,
               borderRadius: BorderRadius.circular(14.0),
             ),
-            child: Icon(Icons.attach_money),
+            child: const Icon(Icons.attach_money),
           ),
-          SizedBox(width: 16.0),
+          const SizedBox(width: 16.0),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,14 +44,14 @@ class TransactionCard extends StatelessWidget {
                   children: [
                     Text(
                       transaction.transactionType,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
                       transaction.createdAt.toIso8601String(),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14.0,
                         color: grey,
                       ),
@@ -60,7 +60,7 @@ class TransactionCard extends StatelessWidget {
                 ),
                 Text(
                   '+' + transaction.amount.toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: green,
                     fontSize: 16.0,
@@ -72,11 +72,11 @@ class TransactionCard extends StatelessWidget {
         ],
       ),
     );
-    ListTile(
-      leading: const Icon(Icons.attach_money),
-      title: Text('Transaction'),
-      subtitle: Text('Date'),
-      trailing: Text('\$0.00'),
+    const ListTile(
+      leading: Icon(Icons.attach_money),
+      title: const Text('Transaction'),
+      subtitle: const Text('Date'),
+      trailing: const Text('\$0.00'),
     );
   }
 }

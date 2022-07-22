@@ -1,18 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/config/custom_colors.dart';
-import 'package:pocket_tomyo/app/modules/0_initial/controllers/auth_controller.dart';
-import 'package:pocket_tomyo/app/services/auth_repository.dart';
+import '../../0_initial/controllers/auth_controller.dart';
+import '../../../services/auth_repository.dart';
 
-import '../../../../widgets/dialogs/custom_dialog.dart';
 import '../../../services/local_storage.dart';
 
 class RegisterController extends GetxController {
   /// [PageController] for the [PageView]
-  PageController pageController = PageController(
-    initialPage: 0,
-  );
+  PageController pageController = PageController();
   final AuthRepository _authRepository = Get.find<AuthRepository>();
 
   /// The number of pages in the [PageView] on the [RegisterView].

@@ -38,7 +38,6 @@ class TopThreeAvatarBox extends StatelessWidget {
                 child: RotationTransition(
                   turns: const AlwaysStoppedAnimation(45 / 360),
                   child: Align(
-                    alignment: Alignment.center,
                     child: Text(
                       (place).toString(),
                       style: const TextStyle(
