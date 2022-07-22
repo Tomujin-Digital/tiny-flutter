@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:pocket_tomyo/app/config/app_constants.dart';
-import 'package:pocket_tomyo/widgets/rec_image_widget.dart';
+import '../../../config/app_constants.dart';
+import '../../../../widgets/rec_image_widget.dart';
 
 class LeaderBoardItem extends StatelessWidget {
   const LeaderBoardItem({Key? key, required this.index}) : super(key: key);

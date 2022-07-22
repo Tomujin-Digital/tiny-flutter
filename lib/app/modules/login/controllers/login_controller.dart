@@ -15,11 +15,6 @@ class LoginController extends GetxController {
   final isVisible = true.obs;
 
   @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
   void dispose() {
     emailController.dispose();
     passwordController.dispose();
@@ -29,16 +24,6 @@ class LoginController extends GetxController {
   bool toggleVisibility() {
     isVisible.value = !isVisible.value;
     return isVisible.value;
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
   }
 
   Future<void> checkForm() async {

@@ -13,7 +13,7 @@ class MarketplaceView extends GetView<MarketplaceController> {
         title: const Text('MarketplaceView'),
         centerTitle: true,
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'MarketplaceView is working',
           style: TextStyle(fontSize: 20),

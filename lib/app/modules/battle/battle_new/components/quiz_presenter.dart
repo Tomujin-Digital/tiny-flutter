@@ -94,14 +94,14 @@ class _QuizCardSliderState extends State<QuizCardSlider>
   void initState() {
     widget.controller.addListener(_quizCtrlUpdate);
 
-    _translationX = AnimationController.unbounded(vsync: this, value: 0.0);
+    _translationX = AnimationController.unbounded(vsync: this);
     _translationY = AnimationController.unbounded(vsync: this, value: 300.0);
-    _translationZ = AnimationController.unbounded(vsync: this, value: 0.0);
-    _rotationX = AnimationController.unbounded(vsync: this, value: 0.0);
+    _translationZ = AnimationController.unbounded(vsync: this);
+    _rotationX = AnimationController.unbounded(vsync: this);
     _rotationY = AnimationController.unbounded(vsync: this, value: 8.0);
     _rotationZ = AnimationController.unbounded(vsync: this, value: -2.0);
     _scale = AnimationController.unbounded(vsync: this, value: 0.3);
-    _opacity = AnimationController.unbounded(vsync: this, value: 0.0);
+    _opacity = AnimationController.unbounded(vsync: this);
 
     super.initState();
   }
@@ -141,7 +141,7 @@ class _QuizCardSliderState extends State<QuizCardSlider>
             transform: Matrix4.identity()
               ..setEntry(3, 2, 0.001)
               ..scale(_scale.value)
-              ..translate(0.0, _translationY.value, 0.0)
+              ..translate(0.0, _translationY.value)
               ..rotateY(_rotationY.value)
               ..rotateZ(_rotationZ.value)
               ..rotateX(_rotationX.value),
@@ -244,7 +244,7 @@ class _QuizCardState extends State<QuizCard>
                   ),
                 ),
                 Text(
-                  '00:' + '${_remaining}'.padLeft(2, '0'),
+                  '00:' + '$_remaining'.padLeft(2, '0'),
                   style: const TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,

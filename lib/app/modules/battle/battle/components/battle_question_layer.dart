@@ -29,7 +29,7 @@ class BattleQuestionLayer extends StatelessWidget {
             begin: isVisible ? 1.0 : 0.0,
             end: isVisible ? 1.0 : 0.0,
           ),
-          duration: Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 200),
           builder: (_, opacity, __) {
             if (opacity == 0.0) {
               return Container();
@@ -44,23 +44,23 @@ class BattleQuestionLayer extends StatelessWidget {
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           FutureBuilder<bool>(
-            future: Future.delayed(Duration(milliseconds: 100), () => true),
+            future:
+                Future.delayed(const Duration(milliseconds: 100), () => true),
             builder: (context, snapshot) {
               final body = Container(
-                margin: EdgeInsets.only(bottom: 24.0),
-                padding: EdgeInsets.fromLTRB(28.0, 24.0, 28.0, 24.0),
+                margin: const EdgeInsets.only(bottom: 24.0),
+                padding: const EdgeInsets.fromLTRB(28.0, 24.0, 28.0, 24.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(
                     width: 2,
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   "This ____ apple",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w900,
                     fontSize: 24.0,
                   ),
@@ -70,7 +70,7 @@ class BattleQuestionLayer extends StatelessWidget {
               return TweenAnimationBuilder<double>(
                 tween: Tween<double>(
                     begin: 0.0, end: snapshot.data != true ? 0.0 : 1.0),
-                duration: Duration(milliseconds: 300),
+                duration: const Duration(milliseconds: 300),
                 builder: (ctx, opacity, _) => Opacity(
                   opacity: opacity,
                   child: body,
@@ -86,12 +86,12 @@ class BattleQuestionLayer extends StatelessWidget {
               begin: 0.0,
               end: 1.0,
             ),
-            duration: Duration(milliseconds: 450),
+            duration: const Duration(milliseconds: 450),
             curve: Curves.easeInOutCubicEmphasized,
             builder: (context, scale, child) {
               return Transform.scale(
                 scale: scale,
-                origin: Offset(0.0, -200.0),
+                origin: const Offset(0.0, -200.0),
                 alignment: Alignment.topCenter,
                 child: child,
               );
@@ -117,7 +117,8 @@ class BattleQuestionLayer extends StatelessWidget {
                       child: TouchableScale(
                         onPressed: () => onPressOption(option),
                         child: Container(
-                          padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 12.0),
+                          padding:
+                              const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 12.0),
                           decoration: BoxDecoration(
                             color: Colors.pinkAccent,
                             border: Border.all(width: 2.0),
@@ -125,7 +126,7 @@ class BattleQuestionLayer extends StatelessWidget {
                           ),
                           child: Text(
                             option,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w900,
                               fontSize: 18.0,
