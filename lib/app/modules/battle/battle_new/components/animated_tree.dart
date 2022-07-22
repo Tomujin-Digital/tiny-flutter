@@ -16,6 +16,7 @@ class AnimatedTree extends StatelessWidget {
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOutCubicEmphasized,
       builder: (context, anim, child) {
+        print(anim);
         final double scaleY =
             Tween<double>(begin: 0.5, end: 1.0).transform(anim);
         return Transform.scale(

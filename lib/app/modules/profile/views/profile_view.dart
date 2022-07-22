@@ -6,7 +6,6 @@ import 'package:pocket_tomyo/app/types/profile_tab_types.dart';
 import 'package:pocket_tomyo/library/main_view.dart';
 import 'package:pocket_tomyo/widgets/profile_card.dart';
 
-import '../../../../widgets/elf_wallet_widget.dart';
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends MainView {
@@ -228,7 +227,9 @@ class ProfileView extends MainView {
                     ),
                     Column(
                       children: [
-                        ElfWalletWidget(),
+                        Center(
+                          child: Text('Something'),
+                        )
                       ],
                     ),
                     Center(

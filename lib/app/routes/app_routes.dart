@@ -19,6 +19,8 @@ abstract class Routes {
   static const BATTLE = _Paths.TINY + _Paths.BATTLE;
   static const PACKAGE = _Paths.PACKAGE;
   static const WALLET = _Paths.WALLET;
+  static const JOURNEY = _Paths.JOURNEY;
+  static const MARKETPLACE = _Paths.MARKETPLACE;
 }
 
 abstract class _Paths {
@@ -37,4 +39,6 @@ abstract class _Paths {
   static const BATTLE = '/battle';
   static const PACKAGE = '/package';
   static const WALLET = '/wallet';
+  static const JOURNEY = '/journey';
+  static const MARKETPLACE = '/marketplace';
 }

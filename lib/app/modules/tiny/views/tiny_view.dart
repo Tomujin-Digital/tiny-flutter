@@ -8,10 +8,12 @@ import '../../../../widgets/buttons/touchable_scale.dart';
 import '../../../../widgets/profile_card.dart';
 import '../../../config/app_constants.dart';
 import '../../../config/custom_colors.dart';
+import '../../battle/battle/battle_loading_page.dart';
+import '../../journey/journey.dart';
+
 import '../../wallet/bindings/wallet_binding.dart';
 import '../../wallet/views/wallet_view.dart';
 import '../controllers/tiny_controller.dart';
-import 'battle_view.dart';
 
 class TinyView extends GetView<TinyController> {
   const TinyView({Key? key}) : super(key: key);
@@ -71,71 +73,75 @@ class TinyView extends GetView<TinyController> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     TouchableScale(
-                        child: Container(
-                          width: Get.width * 0.4,
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 12.0),
-                          decoration: BoxDecoration(
-                            color: primary,
-                            borderRadius: BorderRadius.circular(
-                              12.0,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset(
-                                'assets/images/tiny/journey.png',
-                                fit: BoxFit.cover,
-                              ),
-                              C.hElementSpacing,
-                              const Text(
-                                'Journey',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
+                      onPressed: () {
+                        Get.to(() => JourneyView(), binding: JourneyBinding());
+                      },
+                      child: Container(
+                        width: Get.width * 0.4,
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 12.0),
+                        decoration: BoxDecoration(
+                          color: primary,
+                          borderRadius: BorderRadius.circular(
+                            12.0,
                           ),
                         ),
-                        onPressed: () {
-                          Get.toNamed('/');
-                        }),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset(
+                              'assets/images/tiny/journey.png',
+                              fit: BoxFit.cover,
+                            ),
+                            C.hElementSpacing,
+                            const Text(
+                              'Journey',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                     TouchableScale(
-                        child: Container(
-                          width: Get.width * 0.4,
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 12.0),
-                          decoration: BoxDecoration(
-                            color: secondary,
-                            borderRadius: BorderRadius.circular(
-                              12.0,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset(
-                                'assets/images/tiny/battle.png',
-                                fit: BoxFit.cover,
-                              ),
-                              C.hElementSpacing,
-                              const Text(
-                                'Battle',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
+                      onPressed: () {
+                        Get.to(
+                          () => const VersusScreen(),
+                        );
+                      },
+                      child: Container(
+                        width: Get.width * 0.4,
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 12.0),
+                        decoration: BoxDecoration(
+                          color: secondary,
+                          borderRadius: BorderRadius.circular(
+                            12.0,
                           ),
                         ),
-                        onPressed: () {
-                          Get.to(() => BattleView());
-                        }),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset(
+                              'assets/images/tiny/battle.png',
+                              fit: BoxFit.cover,
+                            ),
+                            C.hElementSpacing,
+                            const Text(
+                              'Battle',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_tomyo/widgets/buttons/touchable_scale.dart';
+import '../../../../widgets/buttons/touchable_scale.dart';
 
-import '../app/config/app_constants.dart';
+import '../../../config/app_constants.dart';
 
 class BattleCardWidget extends StatelessWidget {
   final bool isLocked;

@@ -140,10 +140,11 @@ class QuizController {
     _battleController.createJobAfter(
       1000,
       () {
-        if (isCorrect)
+        if (isCorrect) {
           _battleController.attack();
-        else
+        } else {
           _battleController.attacked();
+        }
       },
     );
 

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/types/notifcation_types.dart';
 
-import 'package:pocket_tomyo/library/main_view.dart';
-import 'package:pocket_tomyo/widgets/notifcation_widget.dart';
-
+import '../../../../library/main_view.dart';
+import '../../../types/notifcation_types.dart';
 import '../controllers/notifcation_controller.dart';
+import '../widgets/widgets.dart';
 
 class NotifcationView extends MainView {
   NotifcationView({Key? key}) : super(key: key);

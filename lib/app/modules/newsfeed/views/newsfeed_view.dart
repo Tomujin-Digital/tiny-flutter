@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:pocket_tomyo/app/modules/home/controllers/home_controller.dart';
 
-import 'package:pocket_tomyo/library/main_view.dart';
-import 'package:pocket_tomyo/widgets/post_widget.dart';
+import '../../../../library/main_view.dart';
+import '../controllers/newsfeed_controller.dart';
+import '../widgets/widgets.dart';
 
-class HomeView extends MainView {
-  HomeView({Key? key}) : super(key: key);
-  final homeController = Get.put(HomeController());
+class NewsFeedView extends MainView {
+  NewsFeedView({Key? key}) : super(key: key);
+  final homeController = Get.put(NewsFeedController());
   @override
   Widget build(BuildContext context) {
     return homeController.isLoading.value

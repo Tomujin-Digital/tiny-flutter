@@ -83,7 +83,7 @@ class _BattleScreenState extends State<BattleScreen>
                       duration: Duration(
                         milliseconds: 300 + math.Random().nextInt(400),
                       ),
-                      child: AnimatedTree(),
+                      child: const AnimatedTree(),
                     ),
                   ),
                 ),
@@ -106,7 +106,7 @@ class _BattleScreenState extends State<BattleScreen>
                       duration: Duration(
                         milliseconds: 300 + math.Random().nextInt(400),
                       ),
-                      child: AnimatedTree(),
+                      child: const AnimatedTree(),
                     ),
                   ),
                 ),
@@ -162,7 +162,7 @@ class _BattleScreenState extends State<BattleScreen>
                       child: Center(
                         child: Container(
                           width: 375,
-                          padding: EdgeInsets.all(24.0),
+                          padding: const EdgeInsets.all(24.0),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(24.0),
                               color: Colors.white),
@@ -172,7 +172,7 @@ class _BattleScreenState extends State<BattleScreen>
                               Text(
                                 msg,
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 32,
@@ -196,7 +196,7 @@ class _BattleScreenState extends State<BattleScreen>
                               ),
                               FilledButton(
                                 onPressed: () => Navigator.pop(context),
-                                child: Text("Go back"),
+                                child: const Text("Go back"),
                               ),
                             ],
                           ),

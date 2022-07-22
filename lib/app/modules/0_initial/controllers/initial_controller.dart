@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../home/views/home_view.dart';
+import '../../marketplace/views/marketplace_view.dart';
+
+import '../../news_feed/views/home_view.dart';
 import '../../profile/views/profile_view.dart';
-import '../../programs/views/programs_view.dart';
+
 import '../../tiny/views/tiny_view.dart';
 import '../../../../library/main_controller.dart';
 
@@ -10,7 +12,7 @@ import '../../leaderboard/views/leaderboard_view.dart';
 
 class InitialController extends MainController {
   late HomeView homeView;
-  late ProgramsView programsView;
+  late MarketplaceView marketplaceView;
   late TinyView tinyView;
   // late NotifcationView notifcationView;
   late LeaderboardView leaderboardView;
@@ -18,7 +20,7 @@ class InitialController extends MainController {
   @override
   void onInit() {
     homeView = HomeView();
-    programsView = ProgramsView();
+    marketplaceView = MarketplaceView();
     tinyView = const TinyView();
     // notifcationView = NotifcationView();
     leaderboardView = LeaderboardView();
@@ -39,7 +41,7 @@ class InitialController extends MainController {
       case 0:
         return homeView;
       case 1:
-        return programsView;
+        return marketplaceView;
       case 2:
         return tinyView;
       case 3:

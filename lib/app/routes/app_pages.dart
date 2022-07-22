@@ -2,18 +2,21 @@ import 'package:get/get.dart';
 
 import '../modules/0_initial/bindings/initial_binding.dart';
 import '../modules/0_initial/views/initial_view.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
+
+import '../modules/journey/bindings/journey_binding.dart';
+import '../modules/journey/views/journey_view.dart';
 import '../modules/leaderboard/bindings/leaderboard_binding.dart';
 import '../modules/leaderboard/views/leaderboard_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/marketplace/bindings/marketplace_binding.dart';
+import '../modules/marketplace/views/marketplace_view.dart';
+import '../modules/newsfeed/newsfeed.dart';
 import '../modules/notifcation/bindings/notifcation_binding.dart';
 import '../modules/notifcation/views/notifcation_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
-import '../modules/programs/bindings/programs_binding.dart';
-import '../modules/programs/views/programs_view.dart';
+
 import '../modules/tiny/bindings/tiny_binding.dart';
 import '../modules/tiny/views/tiny_view.dart';
 import '../modules/wallet/bindings/wallet_binding.dart';
@@ -31,8 +34,8 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => HomeView(),
-      binding: HomeBinding(),
+      page: () => NewsFeedView(),
+      binding: NewsFeedBinding(),
     ),
     GetPage(
       name: _Paths.INITIAL,
@@ -55,11 +58,6 @@ class AppPages {
       binding: NotifcationBinding(),
     ),
     GetPage(
-      name: _Paths.PROGRAMS,
-      page: () => ProgramsView(),
-      binding: ProgramsBinding(),
-    ),
-    GetPage(
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
@@ -73,6 +71,16 @@ class AppPages {
       name: _Paths.WALLET,
       page: () => WalletView(),
       binding: WalletBinding(),
+    ),
+    GetPage(
+      name: _Paths.JOURNEY,
+      page: () => const JourneyView(),
+      binding: JourneyBinding(),
+    ),
+    GetPage(
+      name: _Paths.MARKETPLACE,
+      page: () => const MarketplaceView(),
+      binding: MarketplaceBinding(),
     ),
   ];
 }

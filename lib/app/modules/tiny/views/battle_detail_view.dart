@@ -11,6 +11,8 @@ import '../../../config/app_constants.dart';
 import '../../../config/custom_colors.dart';
 import '../../battle/battle/battle_loading_page.dart';
 import '../../battle/directory_page.dart';
+import '../../journey/bindings/journey_binding.dart';
+import '../../journey/views/journey_view.dart';
 
 class BattleDetailView extends GetView {
   const BattleDetailView({Key? key}) : super(key: key);
@@ -249,7 +251,9 @@ class BattleDetailView extends GetView {
                       ),
                     ),
                     onPressed: () {
-                      Get.toNamed('/');
+                      print('journey');
+                      Get.to(() => const JourneyView(),
+                          binding: JourneyBinding());
                     }),
                 TouchableScale(
                     child: Container(

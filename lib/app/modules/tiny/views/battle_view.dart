@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:pocket_tomyo/app/config/app_constants.dart';
 import 'package:pocket_tomyo/app/config/custom_colors.dart';
 import 'package:pocket_tomyo/app/modules/tiny/views/battle_detail_view.dart';
-import 'package:pocket_tomyo/widgets/battle_card_widget.dart';
+import 'package:pocket_tomyo/app/modules/tiny/widgets/battle_card_widget.dart';
 
 class BattleView extends GetView {
   const BattleView({Key? key}) : super(key: key);

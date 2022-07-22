@@ -18,9 +18,9 @@ class _VersusScreenState extends State<VersusScreen> {
   @override
   void initState() {
     Future.delayed(
-      Duration(seconds: 2),
+      const Duration(seconds: 2),
       () => Navigator.of(context).pushReplacement(CupertinoPageRoute(
-        builder: (context) => BattleScreen(),
+        builder: (context) => const BattleScreen(),
       )),
     );
     super.initState();
@@ -59,7 +59,7 @@ class _VersusScreenState extends State<VersusScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(bottom: 16.0),
+                    padding: const EdgeInsets.only(bottom: 16.0),
                     child: SizedBox(
                       height: 210,
                       width: 210,
@@ -73,7 +73,7 @@ class _VersusScreenState extends State<VersusScreen> {
                       ),
                     ),
                   ),
-                  Text(
+                  const Text(
                     "Daimaa",
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
@@ -81,9 +81,9 @@ class _VersusScreenState extends State<VersusScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  Text(
+                  const Text(
                     "Level 2",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18.0,
                       color: Colors.white,
                     ),
@@ -101,7 +101,7 @@ class _VersusScreenState extends State<VersusScreen> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(bottom: 16.0),
+                    padding: const EdgeInsets.only(bottom: 16.0),
                     child: SizedBox(
                       height: 210,
                       width: 210,
@@ -111,7 +111,7 @@ class _VersusScreenState extends State<VersusScreen> {
                       ),
                     ),
                   ),
-                  Text(
+                  const Text(
                     "Skeleton Boss",
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
@@ -119,7 +119,7 @@ class _VersusScreenState extends State<VersusScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  Text(
+                  const Text(
                     "Level 2",
                     style: TextStyle(
                       fontSize: 18.0,
@@ -171,12 +171,12 @@ class VersusScreenPainter extends CustomPainter {
 
     canvas.drawPath(
       lowerTriangle,
-      Paint()..color = Color(0xff697BFA),
+      Paint()..color = const Color(0xff697BFA),
     );
 
     canvas.drawPath(
       upperTriangle,
-      Paint()..color = Color(0xffFE6871),
+      Paint()..color = const Color(0xffFE6871),
     );
 
     final Path heavyStroke = Path()
@@ -188,7 +188,7 @@ class VersusScreenPainter extends CustomPainter {
     canvas.drawPath(
       heavyStroke,
       Paint()
-        ..color = Color(0xff323B62)
+        ..color = const Color(0xff323B62)
         ..style = PaintingStyle.stroke
         ..strokeJoin = StrokeJoin.round
         ..strokeWidth = 96.0,

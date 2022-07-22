@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../app/config/app_constants.dart';
-import '../app/types/notifcation_types.dart';
-import 'rec_image_widget.dart';
+
+import '../../../../widgets/rec_image_widget.dart';
+import '../../../config/app_constants.dart';
+import '../../../types/notifcation_types.dart';
 
 class NotifcationWidget extends StatelessWidget {
   // final notifcationController = Get.put(NotifcationController());

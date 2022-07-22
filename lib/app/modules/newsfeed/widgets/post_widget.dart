@@ -3,9 +3,9 @@ import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../app/config/app_constants.dart';
-import '../app/modules/0_initial/controllers/auth_controller.dart';
-import 'rec_image_widget.dart';
+import '../../../config/app_constants.dart';
+import '../../0_initial/controllers/auth_controller.dart';
+import '../../../../widgets/rec_image_widget.dart';
 
 class PostWidget extends StatelessWidget {
   const PostWidget({Key? key}) : super(key: key);

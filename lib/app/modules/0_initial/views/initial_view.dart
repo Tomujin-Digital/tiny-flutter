@@ -14,53 +14,52 @@ import '../controllers/initial_controller.dart';
 ///  Үндсэн хуудас
 class InitialView extends MainView {
   InitialView({Key? key}) : super(key: key);
-  // final authController = Get.find<AuthController>();
   final authController = Get.put<AuthController>(AuthController());
   @override
   Widget build(BuildContext context) {
-    return Obx(() => authController.status.value == AuthStatus.loggedIn
-        ? GetBuilder<InitialController>(
-            builder: (con) => Scaffold(
-              /// Сонгогдсон хуудас харагдах [TabBar]
-              body: con.getSelectedPage,
+    return Obx(
+      () => authController.status.value == AuthStatus.loggedIn
+          ? GetBuilder<InitialController>(
+              builder: (con) => Scaffold(
+                /// Сонгогдсон хуудас харагдах [TabBar]
+                body: con.getSelectedPage,
 
-              /// [NavigationBar] хэсгийг хэрэгжүүлэлт
-              bottomNavigationBar: NavigationBar(
-                labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-                backgroundColor: Colors.white,
-                selectedIndex: con.getselectedIndex,
-                onDestinationSelected: (value) {
-                  con.changeIndex(value);
-                },
-                elevation: 8.0,
-                destinations: TabType.values.map(
-                  (e) {
-                    int index = TabType.values.indexOf(e);
-
-                    Widget body;
-
-                    if (index == 2) {
-                      body = NavBarTinyBorder(
-                        child: index == con.getselectedIndex
-                            ? e.tabActiveWidget
-                            : e.tabWidget,
-                      );
-                    } else {
-                      body = index == con.getselectedIndex
-                          ? e.tabActiveWidget
-                          : e.tabWidget;
-                    }
-                    return TouchableScale(
-                      child: body,
-                      onPressed: () {
-                        con.changeIndex(index);
-                      },
-                    );
+                /// [NavigationBar] хэсгийг хэрэгжүүлэлт
+                bottomNavigationBar: NavigationBar(
+                  labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+                  backgroundColor: Colors.white,
+                  selectedIndex: con.getselectedIndex,
+                  onDestinationSelected: (value) {
+                    con.changeIndex(value);
                   },
-                ).toList(),
+                  elevation: 8.0,
+                  destinations: TabType.values.map(
+                    (e) {
+                      int index = TabType.values.indexOf(e);
+                      Widget body;
+                      if (index == 2) {
+                        body = NavBarTinyBorder(
+                          child: index == con.getselectedIndex
+                              ? e.tabActiveWidget
+                              : e.tabWidget,
+                        );
+                      } else {
+                        body = index == con.getselectedIndex
+                            ? e.tabActiveWidget
+                            : e.tabWidget;
+                      }
+                      return TouchableScale(
+                        child: body,
+                        onPressed: () {
+                          con.changeIndex(index);
+                        },
+                      );
+                    },
+                  ).toList(),
+                ),
               ),
-            ),
-          )
-        : LoginView());
+            )
+          : LoginView(),
+    );
   }
 }
