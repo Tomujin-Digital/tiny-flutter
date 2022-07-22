@@ -27,6 +27,7 @@ dependencies:
   pinput: 2.2.11
   flutter:
     sdk: flutter
+  flutter_blurhash: ^0.7.0
   
 
 dev_dependencies:

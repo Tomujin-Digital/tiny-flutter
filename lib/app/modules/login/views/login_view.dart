@@ -1,18 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../config/app_constants.dart';
-import '../../../config/custom_colors.dart';
+import '../../../../widgets/inputs/animated_input.dart';
 import '../../../../library/main_view.dart';
 import '../../../../widgets/buttons/filled_button.dart';
-import '../../../../widgets/inputs/animated_input.dart';
-
+import '../../../config/app_constants.dart';
+import '../../../config/custom_colors.dart';
 import '../controllers/login_controller.dart';
 import 'register_view.dart';
 
 class LoginView extends MainView {
-  LoginView({Key? key}) : super(key: key);
   final _loginController = Get.put<LoginController>(LoginController());
+
+  LoginView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     var bottomPadding = MediaQuery.of(context).viewInsets.bottom;

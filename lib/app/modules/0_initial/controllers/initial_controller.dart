@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../../marketplace/views/marketplace_view.dart';
-
-import '../../news_feed/views/home_view.dart';
-import '../../profile/views/profile_view.dart';
-
-import '../../tiny/views/tiny_view.dart';
 import '../../../../library/main_controller.dart';
-
 import '../../leaderboard/views/leaderboard_view.dart';
+import '../../marketplace/views/marketplace_view.dart';
+import '../../newsfeed/views/newsfeed_view.dart';
+import '../../profile/views/profile_view.dart';
+import '../../tiny/views/tiny_view.dart';
 
 class InitialController extends MainController {
-  late HomeView homeView;
+  late NewsFeedView homeView;
   late MarketplaceView marketplaceView;
   late TinyView tinyView;
   // late NotifcationView notifcationView;
@@ -19,7 +16,7 @@ class InitialController extends MainController {
   late ProfileView profileView;
   @override
   void onInit() {
-    homeView = HomeView();
+    homeView = NewsFeedView();
     marketplaceView = MarketplaceView();
     tinyView = const TinyView();
     // notifcationView = NotifcationView();
